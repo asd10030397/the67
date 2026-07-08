@@ -2,29 +2,22 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useAudio } from "@/components/audio/AudioManager";
 import {
   getBeatDuration,
   STORY_BEATS,
-  STORY_TIMING,
   ENDING_TIMING,
 } from "@/lib/the67/constants";
 import { initMouseTracker } from "@/lib/the67/mouse";
 import { ParticleCanvas } from "./ParticleCanvas";
 import { CustomCursor } from "./CustomCursor";
 import { HeroIntro } from "./HeroIntro";
-import { MemeGallery } from "./MemeGallery";
 import { StoryDisplay } from "./StoryDisplay";
 import { EndingScene } from "./EndingScene";
 import { VisualOverlay } from "./VisualOverlay";
 import { BlackoutOverlay } from "./BlackoutOverlay";
 
-type ScenePhase =
-  | "intro"
-  | "gallery"
-  | "story"
-  | "convergence"
-  | "blackout"
-  | "ending";
+type ScenePhase = "intro" | "story" | "convergence" | "blackout" | "ending";
 
 export function LandingExperience() {
   const [scene, setScene] = useState<ScenePhase>("intro");
@@ -32,16 +25,14 @@ export function LandingExperience() {
   const [shouldConverge, setShouldConverge] = useState(false);
   const [blackoutActive, setBlackoutActive] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const galleryEnteredRef = useRef<number | null>(null);
+  const { startAmbient } = useAudio();
 
   const storyProgress = useMemo(() => {
     switch (scene) {
       case "intro":
         return 0;
-      case "gallery":
-        return 0.08;
       case "story":
-        return 0.1 + (beatIndex / (STORY_BEATS.length - 1)) * 0.75;
+        return 0.05 + (beatIndex / (STORY_BEATS.length - 1)) * 0.8;
       case "convergence":
         return 0.92;
       case "blackout":
@@ -85,22 +76,11 @@ export function LandingExperience() {
     [clearTimer, startConvergence],
   );
 
-  const advanceFromIntro = useCallback(() => {
-    setScene("gallery");
-    galleryEnteredRef.current = Date.now();
-  }, []);
-
-  const advanceFromGallery = useCallback(() => {
-    const entered = galleryEnteredRef.current;
-    const elapsed = entered
-      ? Date.now() - entered
-      : STORY_TIMING.galleryMinDuration;
-
-    if (elapsed < STORY_TIMING.galleryMinDuration) return;
-
+  const beginExperience = useCallback(() => {
+    startAmbient();
     setScene("story");
     setBeatIndex(0);
-  }, []);
+  }, [startAmbient]);
 
   const advanceStoryBeat = useCallback(() => {
     clearTimer();
@@ -116,10 +96,7 @@ export function LandingExperience() {
   const handleClick = useCallback(() => {
     switch (scene) {
       case "intro":
-        advanceFromIntro();
-        break;
-      case "gallery":
-        advanceFromGallery();
+        beginExperience();
         break;
       case "story":
         advanceStoryBeat();
@@ -127,7 +104,7 @@ export function LandingExperience() {
       default:
         break;
     }
-  }, [scene, advanceFromIntro, advanceFromGallery, advanceStoryBeat]);
+  }, [scene, beginExperience, advanceStoryBeat]);
 
   useEffect(() => {
     if (scene === "story") {
@@ -152,8 +129,7 @@ export function LandingExperience() {
   }, [scene]);
 
   const currentBeat = scene === "story" ? STORY_BEATS[beatIndex] : null;
-  const isInteractive =
-    scene === "intro" || scene === "gallery" || scene === "story";
+  const isInteractive = scene === "intro" || scene === "story";
 
   return (
     <div
@@ -175,10 +151,6 @@ export function LandingExperience() {
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
         <AnimatePresence mode="wait">
           {scene === "intro" && <HeroIntro key="intro" />}
-        </AnimatePresence>
-
-        <AnimatePresence mode="wait">
-          {scene === "gallery" && <MemeGallery key="gallery" />}
         </AnimatePresence>
 
         <AnimatePresence mode="wait">

@@ -17,45 +17,35 @@ const beatVariants = {
     opacity: 1,
     transition: {
       duration: ENDING_TIMING.transitionDuration,
-      delay: 0.4,
+      delay: 0.25,
       ease: EASE.entrance,
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: ENDING_TIMING.transitionDuration * 0.9,
+      duration: ENDING_TIMING.transitionDuration * 0.85,
       ease: EASE.exit,
     },
   },
 };
 
-function getLineClasses(beat: EndingBeat, lineIndex: number): string {
-  const { style } = beat;
-
+function getLineClasses(style: EndingBeat["style"], lineIndex: number): string {
   if (style === "epitaph") {
     return lineIndex === 0
-      ? "text-[clamp(1.1rem,2.8vw,1.75rem)] leading-[1.58] tracking-[-0.02em] text-white/70"
-      : "mt-3 text-[clamp(1.15rem,3vw,1.85rem)] leading-[1.55] tracking-[-0.02em] text-white";
+      ? "text-[clamp(1.05rem,2.6vw,1.65rem)] leading-[1.5] text-white/65"
+      : "text-[clamp(1.1rem,2.8vw,1.7rem)] leading-[1.48] text-white";
   }
 
   if (style === "creator") {
-    return "text-[clamp(0.9rem,2.1vw,1.25rem)] leading-[1.75] tracking-[-0.003em] text-white/65";
+    return "text-[clamp(0.88rem,2vw,1.2rem)] leading-[1.65] text-white/60";
   }
 
-  if (style === "welcome" && lineIndex === beat.lines.length - 1) {
-    return "mt-2 text-[clamp(1rem,2.4vw,1.45rem)] leading-[1.6] tracking-[-0.01em] text-white/90";
+  if (style === "welcome" && lineIndex === 0) {
+    return "text-[clamp(0.95rem,2.2vw,1.3rem)] leading-[1.5] text-white/65";
   }
 
-  if (style === "understanding" && lineIndex === 2) {
-    return "text-[clamp(0.95rem,2.2vw,1.35rem)] leading-[1.65] italic text-white/45";
-  }
-
-  if (style === "understanding" && lineIndex === beat.lines.length - 1) {
-    return "mt-1 text-[clamp(1rem,2.4vw,1.45rem)] leading-[1.6] text-white/85";
-  }
-
-  return "text-[clamp(0.95rem,2.2vw,1.35rem)] leading-[1.7] tracking-[-0.006em] text-white/70";
+  return "text-[clamp(0.9rem,2.1vw,1.3rem)] leading-[1.5] text-white/68";
 }
 
 const EndingBeatDisplay = memo(function EndingBeatDisplay({
@@ -72,16 +62,10 @@ const EndingBeatDisplay = memo(function EndingBeatDisplay({
       initial="initial"
       animate="animate"
       exit="exit"
-      className={`flex flex-col items-center text-center ${
-        beat.style === "creator"
-          ? "max-w-[30rem] gap-3.5"
-          : beat.style === "epitaph"
-            ? "max-w-[28rem] gap-2"
-            : "max-w-[32rem] gap-5"
-      }`}
+      className="flex max-w-[26rem] flex-col items-center gap-4 text-center"
     >
       {beat.lines.map((line, i) => (
-        <p key={i} className={`font-light ${getLineClasses(beat, i)}`}>
+        <p key={i} className={`font-light ${getLineClasses(beat.style, i)}`}>
           {line}
         </p>
       ))}
@@ -130,7 +114,7 @@ export function EndingScene() {
 
   return (
     <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-14 md:px-24">
-      <div className="flex min-h-[18rem] items-center justify-center">
+      <div className="flex min-h-[10rem] items-center justify-center">
         <AnimatePresence mode="wait">
           {currentBeat && !showButton && (
             <EndingBeatDisplay
@@ -142,7 +126,7 @@ export function EndingScene() {
         </AnimatePresence>
       </div>
 
-      <div className="mt-12 flex min-h-[8rem] items-start justify-center">
+      <div className="mt-10 flex min-h-[7rem] items-start justify-center">
         <JoinExperimentButton visible={showButton} />
       </div>
     </div>

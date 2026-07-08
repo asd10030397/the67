@@ -16,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <link rel="preload" href="/audio/ambient.wav" as="fetch" crossOrigin="anonymous" />
+      </head>
       <body className="h-full overflow-hidden bg-black text-white antialiased">
         <AudioManager>{children}</AudioManager>
       </body>
