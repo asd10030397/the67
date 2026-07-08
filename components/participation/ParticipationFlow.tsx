@@ -12,7 +12,7 @@ import {
   PARTICIPATION_MESSAGE_PREVIEW,
 } from "@/lib/participation/message";
 import { incrementParticipationCount } from "@/lib/participation/storage";
-import { MintInfoPanel } from "./MintInfoPanel";
+import { MintInfoPanel, MintWindowPolicy } from "./MintInfoPanel";
 import { MintActionButton } from "./MintActionButton";
 import { MintSuccessPanel } from "./MintSuccessPanel";
 import { useParticipation } from "./ParticipationProvider";
@@ -174,7 +174,7 @@ export function ParticipationFlow() {
   const displayAddress = walletAddress ?? address ?? null;
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center bg-black/95 px-8 max-md:backdrop-blur-none md:bg-black/92 md:px-14 md:backdrop-blur-[2px]">
+    <div className="the67-participation-flow fixed inset-0 z-[300] flex items-center justify-center overflow-y-auto bg-black/95 px-8 max-md:items-start max-md:justify-start max-md:bg-black max-md:px-5 max-md:py-5 md:bg-black/92 md:px-14 md:backdrop-blur-[2px]">
       <AnimatePresence mode="wait">
         {step === "connect" && showWalletConnected && displayAddress && (
           <motion.div
@@ -296,15 +296,24 @@ export function ParticipationFlow() {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="flex max-w-[26rem] flex-col items-center gap-10 text-center"
+            className="mx-auto flex w-full max-w-[26rem] flex-col items-center gap-10 py-2 text-center max-md:gap-4 max-md:py-0"
           >
-            <FlowLabel>Step 3</FlowLabel>
-            <MintInfoPanel participationRecord={participationRecord} />
-            <MintActionButton />
+            <div className="max-md:shrink-0">
+              <FlowLabel>Step 3</FlowLabel>
+            </div>
+            <div className="order-2 w-full max-md:shrink-0">
+              <MintInfoPanel participationRecord={participationRecord} />
+            </div>
+            <div className="order-3 w-full max-md:shrink-0 md:order-4">
+              <MintActionButton />
+            </div>
+            <div className="order-4 w-full max-md:shrink-0 md:order-3">
+              <MintWindowPolicy />
+            </div>
             <button
               type="button"
               onClick={closeFlow}
-              className="text-[10px] font-light tracking-[0.2em] text-white/20 uppercase transition-colors duration-700 hover:text-white/40"
+              className="order-5 max-md:shrink-0 max-md:pb-1 text-[10px] font-light tracking-[0.2em] text-white/20 uppercase transition-colors duration-700 hover:text-white/40"
             >
               Close
             </button>

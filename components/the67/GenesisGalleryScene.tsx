@@ -18,10 +18,10 @@ interface GenesisGallerySceneProps {
 function CollectionStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col items-center gap-1 px-2 lg:items-start">
-      <span className="text-[9px] font-light tracking-[0.18em] text-white/45 uppercase">
+      <span className="text-[9px] font-light tracking-[0.18em] text-white/45 uppercase max-md:text-white/58">
         {label}
       </span>
-      <span className="text-[11px] font-light tracking-[0.06em] text-white/88">
+      <span className="text-[11px] font-light tracking-[0.06em] text-white/88 max-md:text-white/96">
         {value}
       </span>
     </div>
@@ -124,7 +124,7 @@ export function GenesisGalleryScene({
       }}
       onPointerDown={(e) => e.stopPropagation()}
     >
-      <div className="grid w-full max-w-none grid-cols-1 items-center gap-8 py-2 lg:grid-cols-[minmax(12rem,1fr)_minmax(18rem,32rem)_minmax(12rem,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[minmax(14rem,1fr)_minmax(22rem,36rem)_minmax(14rem,1fr)] xl:gap-10 2xl:gap-12">
+      <div className="grid w-full max-w-none grid-cols-1 items-center gap-8 py-2 max-md:gap-5 max-md:py-1 lg:grid-cols-[minmax(12rem,1fr)_minmax(18rem,32rem)_minmax(12rem,1fr)] lg:items-start lg:gap-8 xl:grid-cols-[minmax(14rem,1fr)_minmax(22rem,36rem)_minmax(14rem,1fr)] xl:gap-10 2xl:gap-12">
         <motion.div
           className="space-y-4 text-center lg:pt-4 lg:text-left"
           initial={{ opacity: 0, y: motionOffset(10, prefersReducedMotion) }}
@@ -146,7 +146,7 @@ export function GenesisGalleryScene({
             </h2>
           </div>
 
-          <div className="sticky top-0 z-20 -mx-1 bg-black/30 px-1 py-3 backdrop-blur-[6px]">
+          <div className="sticky top-0 z-20 -mx-1 bg-black/30 px-1 py-3 backdrop-blur-[6px] max-md:bg-black/55 max-md:py-2">
             <div className="grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3 lg:grid-cols-2 lg:gap-x-6 xl:grid-cols-3">
               <CollectionStat label="Public" value="63" />
               <CollectionStat label="Creator Archive" value="4" />
@@ -189,7 +189,7 @@ export function GenesisGalleryScene({
           </div>
         </div>
 
-        <div className="flex min-h-[8rem] flex-col items-center justify-between gap-5 text-center lg:items-start lg:pt-4 lg:text-left">
+        <div className="flex min-h-[8rem] flex-col items-center justify-between gap-5 text-center max-md:min-h-0 max-md:gap-3 lg:items-start lg:pt-4 lg:text-left">
           <div className="w-full">
             <AnimatePresence mode="wait">
               {selected ? (
@@ -222,7 +222,7 @@ export function GenesisGalleryScene({
                   <p className="text-[10px] font-light tracking-[0.14em] text-white/35 uppercase">
                     Origin — {selected.origin}
                   </p>
-                  <p className="max-w-md text-[clamp(0.9rem,2vw,1.1rem)] font-light italic leading-[1.55] text-white/45">
+                  <p className="max-w-md text-[clamp(0.9rem,2vw,1.1rem)] font-light italic leading-[1.55] text-white/45 max-md:pointer-events-none max-md:text-[0.8rem] max-md:leading-[1.45] max-md:opacity-[0.1]">
                     &ldquo;{selected.quote}&rdquo;
                   </p>
                   <p className="text-[10px] font-light tracking-[0.1em] text-white/25">

@@ -110,6 +110,10 @@ body {
     opacity: 0.01;
     background-size: 256px 256px;
   }
+
+  .the67-participation-flow {
+    isolation: isolate;
+  }
 }
 
 .vignette {
