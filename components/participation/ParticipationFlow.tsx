@@ -14,6 +14,7 @@ import {
 import { incrementParticipationCount } from "@/lib/participation/storage";
 import { MintInfoPanel } from "./MintInfoPanel";
 import { MintActionButton } from "./MintActionButton";
+import { MintSuccessPanel } from "./MintSuccessPanel";
 import { useParticipation } from "./ParticipationProvider";
 
 const stepVariants = {
@@ -264,6 +265,27 @@ export function ParticipationFlow() {
             <p className="text-[10px] font-light tracking-[0.2em] text-white/25">
               Please wait
             </p>
+          </motion.div>
+        )}
+
+        {step === "mintSuccess" && (
+          <motion.div
+            key="mint-success"
+            variants={stepVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="flex max-w-[26rem] flex-col items-center gap-10 text-center"
+          >
+            <FlowLabel>Complete</FlowLabel>
+            <MintSuccessPanel />
+            <button
+              type="button"
+              onClick={closeFlow}
+              className="text-[10px] font-light tracking-[0.2em] text-white/20 uppercase transition-colors duration-700 hover:text-white/40"
+            >
+              Close
+            </button>
           </motion.div>
         )}
 

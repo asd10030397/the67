@@ -1,6 +1,16 @@
 export type CitizenStatus = "Active" | "Recorded" | "Dormant";
 
-export type ParticipationStep = "idle" | "connect" | "sign" | "mint";
+export type ParticipationStep =
+  | "idle"
+  | "connect"
+  | "sign"
+  | "mint"
+  | "mintSuccess";
+
+export interface MintResult {
+  tokenId: bigint;
+  transactionHash: `0x${string}`;
+}
 
 export interface ParticipationRecord {
   wallet: string;

@@ -10,7 +10,11 @@ import {
   type ReactNode,
 } from "react";
 import { getParticipationCount } from "@/lib/participation/storage";
-import type { ParticipationRecord, ParticipationStep } from "@/lib/participation/types";
+import type {
+  MintResult,
+  ParticipationRecord,
+  ParticipationStep,
+} from "@/lib/participation/types";
 import { ParticipationFlow } from "./ParticipationFlow";
 
 interface ParticipationContextValue {
@@ -19,6 +23,7 @@ interface ParticipationContextValue {
   walletAddress: string | null;
   participantCount: number;
   participationRecord: ParticipationRecord | null;
+  mintResult: MintResult | null;
   startMintFlow: () => void;
   /** @deprecated Use startMintFlow */
   startParticipation: () => void;
@@ -27,6 +32,7 @@ interface ParticipationContextValue {
   setWalletAddress: (address: string | null) => void;
   setParticipantCount: (count: number) => void;
   setParticipationRecord: (record: ParticipationRecord | null) => void;
+  setMintResult: (result: MintResult | null) => void;
 }
 
 const ParticipationContext = createContext<ParticipationContextValue | null>(
@@ -52,6 +58,7 @@ export function ParticipationProvider({ children }: ParticipationProviderProps) 
   const [participantCount, setParticipantCount] = useState(0);
   const [participationRecord, setParticipationRecord] =
     useState<ParticipationRecord | null>(null);
+  const [mintResult, setMintResult] = useState<MintResult | null>(null);
 
   useEffect(() => {
     setParticipantCount(getParticipationCount());
@@ -67,6 +74,7 @@ export function ParticipationProvider({ children }: ParticipationProviderProps) 
     setStep("idle");
     setWalletAddress(null);
     setParticipationRecord(null);
+    setMintResult(null);
   }, []);
 
   const value = useMemo(
@@ -76,6 +84,7 @@ export function ParticipationProvider({ children }: ParticipationProviderProps) 
       walletAddress,
       participantCount,
       participationRecord,
+      mintResult,
       startMintFlow,
       startParticipation: startMintFlow,
       closeFlow,
@@ -83,6 +92,7 @@ export function ParticipationProvider({ children }: ParticipationProviderProps) 
       setWalletAddress,
       setParticipantCount,
       setParticipationRecord,
+      setMintResult,
     }),
     [
       step,
@@ -90,6 +100,7 @@ export function ParticipationProvider({ children }: ParticipationProviderProps) 
       walletAddress,
       participantCount,
       participationRecord,
+      mintResult,
       startMintFlow,
       closeFlow,
     ],

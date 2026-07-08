@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "ipfs:hash-test-metadata": "node scripts/ipfs-hash-test-metadata.mjs",
+    "ipfs:upload-test-metadata": "node scripts/ipfs-upload-test-metadata.mjs"
   },
   "dependencies": {
     "@fontsource/space-grotesk": "^5.2.10",
