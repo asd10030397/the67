@@ -39,6 +39,36 @@ interface AudioProviderProps {
 let persistentAudio: HTMLAudioElement | null = null;
 let isAudioInitialized = false;
 
+function configureAudioElement(audio: HTMLAudioElement) {
+  audio.loop = true;
+  audio.preload = "auto";
+  audio.volume = 0;
+  audio.setAttribute("playsinline", "");
+  audio.setAttribute("webkit-playsinline", "");
+}
+
+function markPlaybackStarted(
+  startedRef: { current: boolean },
+  setHasStarted: (value: boolean) => void,
+  fadeProgressRef: { current: number },
+  applyVolume: () => void,
+  runFade: (
+    from: number,
+    to: number,
+    durationMs: number,
+    easing?: (t: number) => number,
+    onComplete?: () => void,
+  ) => void,
+) {
+  if (!startedRef.current) {
+    startedRef.current = true;
+    setHasStarted(true);
+    fadeProgressRef.current = AUDIO_CONFIG.initialVolume;
+    applyVolume();
+    runFade(AUDIO_CONFIG.initialVolume, 1, AUDIO_CONFIG.fadeInDurationMs, easeOutExpo);
+  }
+}
+
 export function AudioProvider({ children }: AudioProviderProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeRafRef = useRef<number | null>(null);
@@ -47,7 +77,6 @@ export function AudioProvider({ children }: AudioProviderProps) {
   const startedRef = useRef(false);
   const pendingRetryRef = useRef(false);
   const readyRef = useRef(false);
-  const isInitializedRef = useRef(false);
   const isPlayingRef = useRef(false);
   const playInFlightRef = useRef<Promise<void> | null>(null);
   const attemptPlaybackRef = useRef<() => Promise<void>>(async () => {});
@@ -134,6 +163,26 @@ export function AudioProvider({ children }: AudioProviderProps) {
     [applyVolume, cancelFade],
   );
 
+  const handlePlaybackSuccess = useCallback(() => {
+    pendingRetryRef.current = false;
+    markPlaybackStarted(
+      startedRef,
+      setHasStarted,
+      fadeProgressRef,
+      applyVolume,
+      runFade,
+    );
+
+    const audio = audioRef.current;
+    if (startedRef.current && !mutedRef.current && audio && audio.volume === 0) {
+      fadeProgressRef.current = 1;
+      applyVolume();
+    }
+
+    isPlayingRef.current = true;
+    setIsPlaying(true);
+  }, [applyVolume, runFade]);
+
   const attemptPlayback = useCallback(async () => {
     if (playInFlightRef.current) {
       return playInFlightRef.current;
@@ -148,42 +197,60 @@ export function AudioProvider({ children }: AudioProviderProps) {
           audio.currentTime = 0;
         }
 
-        await waitUntilReady(audio);
-        await audio.play();
-        pendingRetryRef.current = false;
+        // iOS Safari: call play() immediately while the user gesture is active.
+        try {
+          await audio.play();
+          handlePlaybackSuccess();
+          return;
+        } catch (immediateError) {
+          if (
+            immediateError instanceof DOMException &&
+            immediateError.name === "AbortError" &&
+            !audio.paused
+          ) {
+            handlePlaybackSuccess();
+            return;
+          }
 
-        if (!startedRef.current) {
-          startedRef.current = true;
-          setHasStarted(true);
-          fadeProgressRef.current = AUDIO_CONFIG.initialVolume;
-          applyVolume();
-          runFade(AUDIO_CONFIG.initialVolume, 1, AUDIO_CONFIG.fadeInDurationMs, easeOutExpo);
-        } else if (!mutedRef.current && audio.volume === 0) {
-          fadeProgressRef.current = 1;
-          applyVolume();
+          if (
+            immediateError instanceof DOMException &&
+            immediateError.name === "NotAllowedError"
+          ) {
+            pendingRetryRef.current = true;
+            isPlayingRef.current = false;
+            setIsPlaying(false);
+            return;
+          }
         }
 
-        isPlayingRef.current = true;
-        setIsPlaying(true);
+        await waitUntilReady(audio);
+        await audio.play();
+        handlePlaybackSuccess();
       } catch (error) {
         if (
           error instanceof DOMException &&
           error.name === "AbortError" &&
-          !audio.paused
+          audio.paused === false
         ) {
-          isPlayingRef.current = true;
-          setIsPlaying(true);
-          pendingRetryRef.current = false;
+          handlePlaybackSuccess();
           return;
         }
 
-        pendingRetryRef.current = true;
+        if (
+          error instanceof DOMException &&
+          error.name === "NotAllowedError"
+        ) {
+          pendingRetryRef.current = true;
+        } else {
+          pendingRetryRef.current = true;
+          console.error(
+            `[THE67 Audio] Playback failed for ${AUDIO_CONFIG.src}.`,
+            error,
+          );
+        }
+
         isPlayingRef.current = false;
         setIsPlaying(false);
-        console.error(
-          `[THE67 Audio] Playback failed for ${AUDIO_CONFIG.src}.`,
-          error,
-        );
       } finally {
         playInFlightRef.current = null;
       }
@@ -191,10 +258,10 @@ export function AudioProvider({ children }: AudioProviderProps) {
 
     playInFlightRef.current = playAttempt;
     return playAttempt;
-  }, [applyVolume, runFade, waitUntilReady]);
+  }, [handlePlaybackSuccess, waitUntilReady]);
 
   const startAmbient = useCallback(() => {
-    if (startedRef.current || isPlayingRef.current || playInFlightRef.current) {
+    if (startedRef.current && !pendingRetryRef.current) {
       return;
     }
     void attemptPlayback();
@@ -238,26 +305,19 @@ export function AudioProvider({ children }: AudioProviderProps) {
 
   useEffect(() => {
     if (isAudioInitialized) {
-      isInitializedRef.current = true;
       audioRef.current = persistentAudio;
       return;
     }
 
-    console.log("[THE67 Audio] Audio created");
     const audio = new Audio(AUDIO_CONFIG.src);
-    audio.loop = true;
-    audio.preload = "auto";
-    audio.volume = 0;
+    configureAudioElement(audio);
 
     persistentAudio = audio;
     audioRef.current = audio;
     isAudioInitialized = true;
-    isInitializedRef.current = true;
-    console.log("[THE67 Audio] Audio initialized");
 
     const onCanPlay = () => {
       readyRef.current = true;
-      console.log(`[THE67 Audio] Loaded ${AUDIO_CONFIG.src}`);
     };
 
     const onError = () => {
@@ -282,8 +342,8 @@ export function AudioProvider({ children }: AudioProviderProps) {
       setIsPlaying(true);
     };
 
-    const onPointerDown = () => {
-      if (pendingRetryRef.current) {
+    const onUserInteraction = () => {
+      if (!startedRef.current || pendingRetryRef.current) {
         void attemptPlaybackRef.current();
       }
     };
@@ -292,11 +352,23 @@ export function AudioProvider({ children }: AudioProviderProps) {
     audio.addEventListener("error", onError);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("play", onPlay);
-    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointerdown", onUserInteraction, { passive: true });
+    window.addEventListener("touchstart", onUserInteraction, { passive: true });
+    window.addEventListener("click", onUserInteraction, { passive: true });
 
     if (audio.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
       readyRef.current = true;
     }
+
+    return () => {
+      audio.removeEventListener("canplaythrough", onCanPlay);
+      audio.removeEventListener("error", onError);
+      audio.removeEventListener("pause", onPause);
+      audio.removeEventListener("play", onPlay);
+      window.removeEventListener("pointerdown", onUserInteraction);
+      window.removeEventListener("touchstart", onUserInteraction);
+      window.removeEventListener("click", onUserInteraction);
+    };
   }, []);
 
   const value = useMemo(

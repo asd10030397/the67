@@ -8,3 +8,17 @@ export const MOTION = {
   enterDelay: 0.35,
   exitPause: 0.2,
 } as const;
+
+export function motionDuration(
+  duration: number,
+  prefersReducedMotion: boolean,
+): number {
+  return prefersReducedMotion ? 0.01 : duration;
+}
+
+export function motionOffset(
+  offset: number,
+  prefersReducedMotion: boolean,
+): number {
+  return prefersReducedMotion ? 0 : offset;
+}

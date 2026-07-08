@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { motion } from "framer-motion";
-import { EASE } from "@/lib/the67/motion";
+import { EASE, motionDuration, motionOffset } from "@/lib/the67/motion";
 import { SCENE_TIMING, type SceneStyle } from "@/lib/the67/constants";
 
 interface SceneDisplayProps {
@@ -10,6 +10,7 @@ interface SceneDisplayProps {
   style: SceneStyle;
   emphasisIndex?: number;
   sceneKey: number;
+  prefersReducedMotion?: boolean;
 }
 
 function getLineClasses(
@@ -46,19 +47,28 @@ export const SceneDisplay = memo(function SceneDisplay({
   style,
   emphasisIndex,
   sceneKey,
+  prefersReducedMotion = false,
 }: SceneDisplayProps) {
+  const transitionDuration = motionDuration(
+    SCENE_TIMING.transitionDuration,
+    prefersReducedMotion,
+  );
+
   return (
     <motion.div
       key={sceneKey}
-      className="pointer-events-none flex min-h-[12rem] items-center justify-center px-14 md:px-20"
+      className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 md:px-20"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { duration: SCENE_TIMING.transitionDuration, ease: EASE.entrance },
+        transition: { duration: transitionDuration, ease: EASE.entrance },
       }}
       exit={{
         opacity: 0,
-        transition: { duration: SCENE_TIMING.transitionDuration * 0.8, ease: EASE.exit },
+        transition: {
+          duration: transitionDuration * 0.8,
+          ease: EASE.exit,
+        },
       }}
     >
       <div className="flex max-w-[28rem] flex-col items-center gap-3 text-center">
@@ -70,13 +80,15 @@ export const SceneDisplay = memo(function SceneDisplay({
             <motion.p
               key={`${sceneKey}-${index}`}
               className={`font-light ${getLineClasses(style, isEmphasis, isEmpty)}`}
-              initial={{ opacity: 0, y: 6 }}
+              initial={{ opacity: 0, y: motionOffset(6, prefersReducedMotion) }}
               animate={{
                 opacity: isEmpty ? 0 : 1,
                 y: 0,
                 transition: {
-                  duration: SCENE_TIMING.transitionDuration,
-                  delay: index * SCENE_TIMING.lineStagger,
+                  duration: transitionDuration,
+                  delay: prefersReducedMotion
+                    ? 0
+                    : index * SCENE_TIMING.lineStagger,
                   ease: EASE.entrance,
                 },
               }}

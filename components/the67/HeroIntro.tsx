@@ -1,20 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { EASE } from "@/lib/the67/motion";
+import { EASE, motionDuration } from "@/lib/the67/motion";
 
-export function HeroIntro() {
+interface HeroIntroProps {
+  prefersReducedMotion?: boolean;
+}
+
+export function HeroIntro({ prefersReducedMotion = false }: HeroIntroProps) {
+  const transitionDuration = motionDuration(2.4, prefersReducedMotion);
+
   return (
     <motion.div
-      className="pointer-events-none flex flex-col items-center gap-12 text-center"
+      className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-12 text-center"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { duration: 2.4, ease: EASE.entrance },
+        transition: { duration: transitionDuration, ease: EASE.entrance },
       }}
       exit={{
         opacity: 0,
-        transition: { duration: 1.4, ease: EASE.exit },
+        transition: { duration: motionDuration(1.4, prefersReducedMotion), ease: EASE.exit },
       }}
     >
       <motion.h1
@@ -22,7 +28,11 @@ export function HeroIntro() {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 2, delay: 0.2, ease: EASE.entrance },
+          transition: {
+            duration: motionDuration(2, prefersReducedMotion),
+            delay: prefersReducedMotion ? 0 : 0.2,
+            ease: EASE.entrance,
+          },
         }}
       >
         THE67
@@ -32,7 +42,11 @@ export function HeroIntro() {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 1.6, delay: 1.8, ease: EASE.entrance },
+          transition: {
+            duration: motionDuration(1.6, prefersReducedMotion),
+            delay: prefersReducedMotion ? 0 : 1.8,
+            ease: EASE.entrance,
+          },
         }}
       >
         Click Anywhere

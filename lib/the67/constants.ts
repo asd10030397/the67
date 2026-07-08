@@ -178,6 +178,9 @@ export const STORY_BEATS: StoryBeat[] = [];
 /** @deprecated */
 export const STORY_TIMING = SCENE_TIMING;
 
+export const MOBILE_PARTICLE_SCALE = 0.42;
+export const REDUCED_MOTION_PARTICLE_SCALE = 0.28;
+
 export const PARTICLE_CONFIG = {
   baseCount: 140,
   maxCount: 300,

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { EASE } from "@/lib/the67/motion";
+import { EASE, motionDuration, motionOffset } from "@/lib/the67/motion";
 import {
   GENESIS_PREVIEW_SEVEN,
   type GenesisPreviewCitizen,
@@ -11,6 +11,21 @@ import {
 
 interface GenesisGallerySceneProps {
   onContinue: () => void;
+  prefersReducedMotion?: boolean;
+  isTouchDevice?: boolean;
+}
+
+function CollectionStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex flex-col items-center gap-1 px-2">
+      <span className="text-[9px] font-light tracking-[0.18em] text-white/30 uppercase">
+        {label}
+      </span>
+      <span className="text-[11px] font-light tracking-[0.06em] text-white/75">
+        {value}
+      </span>
+    </div>
+  );
 }
 
 function CitizenThumb({
@@ -48,35 +63,47 @@ function CitizenThumb({
   );
 }
 
-export function GenesisGalleryScene({ onContinue }: GenesisGallerySceneProps) {
+export function GenesisGalleryScene({
+  onContinue,
+  prefersReducedMotion = false,
+  isTouchDevice = false,
+}: GenesisGallerySceneProps) {
   const [selectedId, setSelectedId] = useState<string | null>(
     GENESIS_PREVIEW_SEVEN[0]?.id ?? null,
   );
   const selected =
     GENESIS_PREVIEW_SEVEN.find((c) => c.id === selectedId) ?? null;
 
+  const transitionDuration = motionDuration(1.6, prefersReducedMotion);
+
   return (
     <motion.div
-      className="pointer-events-auto flex h-full w-full flex-col items-center justify-center px-6 py-6 md:px-14"
+      className="pointer-events-auto absolute inset-0 flex items-center justify-center overflow-y-auto px-4 py-4 md:px-8"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { duration: 1.6, ease: EASE.entrance },
+        transition: { duration: transitionDuration, ease: EASE.entrance },
       }}
       exit={{
         opacity: 0,
-        transition: { duration: 1.2, ease: EASE.exit },
+        transition: {
+          duration: motionDuration(1.2, prefersReducedMotion),
+          ease: EASE.exit,
+        },
       }}
       onPointerDown={(e) => e.stopPropagation()}
     >
-      <div className="flex w-full max-w-4xl flex-col items-center gap-6 text-center md:gap-8">
+      <div className="flex w-full max-w-4xl flex-col items-center gap-5 text-center md:gap-6">
         <motion.div
           className="space-y-2"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: motionOffset(10, prefersReducedMotion) }}
           animate={{
             opacity: 1,
             y: 0,
-            transition: { duration: 1.2, ease: EASE.entrance },
+            transition: {
+              duration: motionDuration(1.2, prefersReducedMotion),
+              ease: EASE.entrance,
+            },
           }}
         >
           <p className="text-[10px] font-light tracking-[0.34em] text-white/35 uppercase">
@@ -88,48 +115,55 @@ export function GenesisGalleryScene({ onContinue }: GenesisGallerySceneProps) {
         </motion.div>
 
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] font-light tracking-[0.14em] text-white/30 uppercase"
+          className="grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { duration: 1.2, delay: 0.15, ease: EASE.entrance },
+            transition: {
+              duration: motionDuration(1.2, prefersReducedMotion),
+              delay: prefersReducedMotion ? 0 : 0.15,
+              ease: EASE.entrance,
+            },
           }}
         >
-          <span>63 Public</span>
-          <span className="text-white/15">·</span>
-          <span>4 Creator Archive</span>
-          <span className="text-white/15">·</span>
-          <span>Base Network</span>
-          <span className="text-white/15">·</span>
-          <span>0.0067 ETH</span>
-          <span className="text-white/15">·</span>
-          <span>Max 1 per wallet</span>
+          <CollectionStat label="Public" value="63" />
+          <CollectionStat label="Creator Archive" value="4" />
+          <CollectionStat label="Network" value="Base" />
+          <CollectionStat label="Price" value="0.0067 ETH" />
+          <CollectionStat label="Per Wallet" value="1" />
         </motion.div>
 
-        <div className="relative h-[clamp(10rem,28vw,16rem)] w-[clamp(10rem,28vw,16rem)]">
+        <div className="relative h-40 w-40 shrink-0 md:h-64 md:w-64">
           <AnimatePresence mode="wait">
             {selected ? (
               <motion.div
                 key={selected.id}
                 className="relative h-full w-full overflow-hidden border border-white/10"
-                initial={{ opacity: 0, scale: 0.97 }}
+                initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 0.97 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 1.1, ease: EASE.entrance },
+                  transition: {
+                    duration: motionDuration(1.1, prefersReducedMotion),
+                    ease: EASE.entrance,
+                  },
                 }}
                 exit={{
                   opacity: 0,
-                  scale: 1.02,
-                  transition: { duration: 0.7, ease: EASE.exit },
+                  scale: prefersReducedMotion ? 1 : 1.02,
+                  transition: {
+                    duration: motionDuration(0.7, prefersReducedMotion),
+                    ease: EASE.exit,
+                  },
                 }}
               >
                 <Image
                   src={selected.imagePath}
                   alt={selected.name}
-                  fill
-                  sizes="(max-width: 768px) 40vw, 256px"
-                  className="object-cover"
+                  width={256}
+                  height={256}
+                  sizes="(max-width: 768px) 160px, 256px"
+                  className="h-full w-full object-cover"
                   priority
                 />
               </motion.div>
@@ -137,17 +171,17 @@ export function GenesisGalleryScene({ onContinue }: GenesisGallerySceneProps) {
           </AnimatePresence>
         </div>
 
-        <div className="flex w-full justify-center gap-2 overflow-x-auto pb-1 md:gap-3">
+        <div className="flex w-full max-w-[22rem] justify-center gap-2 overflow-x-auto pb-1 md:max-w-none md:gap-3">
           {GENESIS_PREVIEW_SEVEN.map((citizen, index) => (
             <motion.div
               key={citizen.id}
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: motionOffset(8, prefersReducedMotion) }}
               animate={{
                 opacity: 1,
                 y: 0,
                 transition: {
-                  duration: 0.9,
-                  delay: 0.25 + index * 0.06,
+                  duration: motionDuration(0.9, prefersReducedMotion),
+                  delay: prefersReducedMotion ? 0 : 0.25 + index * 0.06,
                   ease: EASE.entrance,
                 },
               }}
@@ -161,21 +195,27 @@ export function GenesisGalleryScene({ onContinue }: GenesisGallerySceneProps) {
           ))}
         </div>
 
-        <div className="min-h-[7.5rem] w-full max-w-md">
+        <div className="h-[7.5rem] w-full max-w-md shrink-0">
           <AnimatePresence mode="wait">
             {selected ? (
               <motion.div
                 key={selected.id}
                 className="space-y-2.5 text-center"
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: motionOffset(8, prefersReducedMotion) }}
                 animate={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 1, ease: EASE.entrance },
+                  transition: {
+                    duration: motionDuration(1, prefersReducedMotion),
+                    ease: EASE.entrance,
+                  },
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.6, ease: EASE.exit },
+                  transition: {
+                    duration: motionDuration(0.6, prefersReducedMotion),
+                    ease: EASE.exit,
+                  },
                 }}
               >
                 <p className="text-[10px] font-light tracking-[0.2em] text-white/25 uppercase">
@@ -213,11 +253,17 @@ export function GenesisGalleryScene({ onContinue }: GenesisGallerySceneProps) {
             e.stopPropagation();
             onContinue();
           }}
-          className="cursor-none border border-white/10 bg-transparent px-10 py-3 text-[10px] font-light tracking-[0.34em] text-white/50 uppercase transition-colors duration-1000 hover:border-white/25 hover:text-white/75"
+          className={`border border-white/10 bg-transparent px-10 py-3 text-[10px] font-light tracking-[0.34em] text-white/50 uppercase transition-colors duration-1000 hover:border-white/25 hover:text-white/75 ${
+            isTouchDevice ? "cursor-pointer" : "cursor-none"
+          }`}
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { duration: 1.2, delay: 0.5, ease: EASE.entrance },
+            transition: {
+              duration: motionDuration(1.2, prefersReducedMotion),
+              delay: prefersReducedMotion ? 0 : 0.5,
+              ease: EASE.entrance,
+            },
           }}
         >
           Continue

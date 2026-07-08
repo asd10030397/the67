@@ -15,6 +15,7 @@ type InternalPhase = "drift" | "converge" | "hold" | "dissolve";
 
 interface ParticleCanvasProps {
   storyProgress: number;
+  particleScale?: number;
   mouseEnabled: boolean;
   frozen: boolean;
   converge: boolean;
@@ -24,6 +25,7 @@ interface ParticleCanvasProps {
 
 export function ParticleCanvas({
   storyProgress,
+  particleScale = 1,
   mouseEnabled,
   frozen,
   converge,
@@ -35,6 +37,7 @@ export function ParticleCanvas({
   const rafRef = useRef<number | null>(null);
   const sizeRef = useRef({ width: 0, height: 0, dpr: 1 });
   const progressRef = useRef(0);
+  const particleScaleRef = useRef(particleScale);
   const mouseEnabledRef = useRef(mouseEnabled);
   const frozenRef = useRef(frozen);
   const phaseRef = useRef<InternalPhase>("drift");
@@ -65,6 +68,10 @@ export function ParticleCanvas({
   useEffect(() => {
     progressRef.current = storyProgress;
   }, [storyProgress]);
+
+  useEffect(() => {
+    particleScaleRef.current = particleScale;
+  }, [particleScale]);
 
   useEffect(() => {
     if (converge && !convergeRef.current) {
@@ -108,9 +115,9 @@ export function ParticleCanvas({
     };
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const width = window.innerWidth;
       const height = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, width < 768 ? 1 : 2);
 
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -120,7 +127,10 @@ export function ParticleCanvas({
 
       sizeRef.current = { width, height, dpr };
 
-      const targetCount = getParticleCountForProgress(progressRef.current);
+      const targetCount = getParticleCountForProgress(
+        progressRef.current,
+        particleScaleRef.current,
+      );
       if (particlesRef.current.length === 0) {
         particlesRef.current = createParticles(targetCount, width, height);
       } else if (particlesRef.current.length < targetCount) {
@@ -155,7 +165,10 @@ export function ParticleCanvas({
 
       const isFrozen = frozenRef.current;
 
-      const targetCount = getParticleCountForProgress(progress);
+      const targetCount = getParticleCountForProgress(
+        progress,
+        particleScaleRef.current,
+      );
       while (particles.length < targetCount) {
         particles.push(createParticle(width, height));
       }

@@ -52,7 +52,10 @@ export function createParticles(
   return Array.from({ length: count }, () => createParticle(width, height));
 }
 
-export function getParticleCountForProgress(progress: number): number {
+export function getParticleCountForProgress(
+  progress: number,
+  scale = 1,
+): number {
   const { baseCount, maxCount } = PARTICLE_CONFIG;
-  return Math.round(baseCount + (maxCount - baseCount) * progress);
+  return Math.round((baseCount + (maxCount - baseCount) * progress) * scale);
 }

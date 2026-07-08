@@ -173,7 +173,7 @@ export function ParticipationFlow() {
   const displayAddress = walletAddress ?? address ?? null;
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center bg-black/92 px-8 backdrop-blur-[2px] md:px-14">
+    <div className="fixed inset-0 z-[300] flex items-center justify-center bg-black/95 px-8 max-md:backdrop-blur-none md:bg-black/92 md:px-14 md:backdrop-blur-[2px]">
       <AnimatePresence mode="wait">
         {step === "connect" && showWalletConnected && displayAddress && (
           <motion.div

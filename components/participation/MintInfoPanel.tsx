@@ -17,7 +17,7 @@ function MintField({ label, value }: { label: string; value: string }) {
       <p className="shrink-0 text-[10px] font-light tracking-[0.2em] text-white/25 uppercase">
         {label}
       </p>
-      <p className="text-right text-[10px] font-light tracking-[0.08em] text-white/55">
+      <p className="text-right text-[11px] font-light tracking-[0.06em] text-white/78">
         {value}
       </p>
     </div>
