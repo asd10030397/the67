@@ -231,15 +231,6 @@ export function AudioProvider({ children }: AudioProviderProps) {
   );
 
   return (
-    <AudioContext.Provider value={value}>
-      <audio
-        src={AUDIO_CONFIG.src}
-        preload="auto"
-        loop
-        className="hidden"
-        aria-hidden="true"
-      />
-      {children}
-    </AudioContext.Provider>
+    <AudioContext.Provider value={value}>{children}</AudioContext.Provider>
   );
 }
