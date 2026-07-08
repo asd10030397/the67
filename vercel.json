@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_THE67_GENESIS_CONTRACT_ADDRESS": "0xe8E58E5EEFD855441bb085fC06C70bFD1f54f12c"
+    }
+  }
+}
