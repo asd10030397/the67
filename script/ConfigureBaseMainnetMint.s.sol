@@ -4,9 +4,9 @@ pragma solidity ^0.8.24;
 import { Script, console2 } from "forge-std/Script.sol";
 import { THE67Genesis } from "../contracts/THE67Genesis.sol";
 
-/// @title ConfigureSepoliaMint
-/// @notice Opens the public mint window on an existing Base Sepolia deployment.
-contract ConfigureSepoliaMint is Script {
+/// @title ConfigureBaseMainnetMint
+/// @notice Opens the public mint window on an existing Base mainnet deployment.
+contract ConfigureBaseMainnetMint is Script {
     function run() external {
         uint256 ownerPrivateKey = vm.envUint("PRIVATE_KEY");
         address contractAddress = vm.envAddress("THE67_GENESIS_ADDRESS");
@@ -14,9 +14,7 @@ contract ConfigureSepoliaMint is Script {
 
         THE67Genesis collection = THE67Genesis(contractAddress);
 
-        // Sepolia testing: opens at configure time unless SEPOLIA_MINT_START_UNIX is set.
-        // Never use MAINNET_MINT_START_UNIX here.
-        uint256 startTime = vm.envOr("SEPOLIA_MINT_START_UNIX", block.timestamp);
+        uint256 startTime = vm.envUint("MAINNET_MINT_START_UNIX");
         uint256 endTime = startTime + duration;
 
         vm.startBroadcast(ownerPrivateKey);

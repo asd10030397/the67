@@ -46,19 +46,33 @@ function createPlaceholderPng(label) {
   const height = 512;
   const rowSize = 1 + width * 3;
   const raw = Buffer.alloc(rowSize * height);
-  const bg = { r: 17, g: 17, b: 17 };
+
+  const isFigurePixel = (x, y) => {
+    const cx = 228;
+    const cy = 286;
+    const inSix =
+      (x - cx) ** 2 + (y - cy) ** 2 <= 88 ** 2 ||
+      (x >= 168 && x <= 288 && y >= 220 && y <= 360);
+    const inSeven =
+      (x >= 292 && x <= 372 && y >= 168 && y <= 212) ||
+      (x >= 332 && x <= 372 && y >= 168 && y <= 392);
+    return inSix || inSeven;
+  };
 
   for (let y = 0; y < height; y += 1) {
     const rowStart = y * rowSize;
     raw[rowStart] = 0;
     for (let x = 0; x < width; x += 1) {
       const offset = rowStart + 1 + x * 3;
-      const accent = x > 180 && x < 332 && y > 220 && y < 292 ? 238 : bg.r;
-      const accentG = x > 180 && x < 332 && y > 220 && y < 292 ? 238 : bg.g;
-      const accentB = x > 180 && x < 332 && y > 220 && y < 292 ? 238 : bg.b;
-      raw[offset] = accent;
-      raw[offset + 1] = accentG;
-      raw[offset + 2] = accentB;
+      if (isFigurePixel(x, y)) {
+        raw[offset] = 228;
+        raw[offset + 1] = 228;
+        raw[offset + 2] = 228;
+      } else {
+        raw[offset] = 0;
+        raw[offset + 1] = 0;
+        raw[offset + 2] = 0;
+      }
     }
   }
 

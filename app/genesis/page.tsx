@@ -12,7 +12,7 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function GenesisPage() {
   return (
-    <SiteShell>
+    <SiteShell layout="wide">
       <GenesisPreviewGallery />
     </SiteShell>
   );

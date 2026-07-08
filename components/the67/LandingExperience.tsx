@@ -85,7 +85,7 @@ export function LandingExperience() {
       <VisualOverlay reducedEffects={environment.isMobile || environment.prefersReducedMotion} />
 
       <div className="relative z-10 flex h-full w-full flex-col items-center justify-center">
-        <SceneStage>
+        <SceneStage variant={isGallery ? "gallery" : "default"}>
           <AnimatePresence mode="wait">
             {currentScene?.type === "intro" && (
               <HeroIntro

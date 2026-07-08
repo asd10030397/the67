@@ -7,6 +7,7 @@
   --background: #000000;
   --foreground: #ffffff;
   --scene-stage-height: min(82dvh, 40rem);
+  --scene-gallery-height: min(86dvh, 44rem);
 }
 
 @theme inline {
@@ -43,10 +44,42 @@ body {
   max-height: var(--scene-stage-height);
 }
 
+.the67-scene-stage--gallery {
+  height: auto;
+  min-height: var(--scene-gallery-height);
+  max-height: none;
+  overflow: visible;
+}
 
 @media (min-width: 768px) {
   :root {
     --scene-stage-height: min(72vh, 36rem);
+    --scene-gallery-height: min(88vh, 52rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --scene-stage-height: min(76vh, 40rem);
+    --scene-gallery-height: min(90vh, 56rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --scene-gallery-height: min(88vh, 54rem);
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --scene-gallery-height: min(90vh, 58rem);
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --scene-gallery-height: min(92vh, 62rem);
   }
 }
 

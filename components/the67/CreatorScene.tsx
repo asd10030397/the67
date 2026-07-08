@@ -53,7 +53,7 @@ export function CreatorScene({
         ))}
       </div>
 
-      <div className="pointer-events-auto mt-14">
+      <div className="pointer-events-auto mt-8">
         <MintGenesisButton useExperienceCursor={useExperienceCursor} />
       </div>
     </motion.div>
