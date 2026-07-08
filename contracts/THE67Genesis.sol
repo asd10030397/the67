@@ -253,7 +253,12 @@ contract THE67Genesis is ERC721AQueryable, ERC2981, Ownable, Pausable, Reentranc
     }
 
     /// @notice Returns token metadata, hidden or revealed.
-    function tokenURI(uint256 tokenId) public view override(ERC721A, IERC721A) returns (string memory) {
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721A, IERC721A)
+        returns (string memory)
+    {
         if (!_exists(tokenId)) revert URIQueryForNonexistentToken();
         if (!revealed) return _hiddenURI;
         return string(abi.encodePacked(_baseTokenURI, tokenId.toString(), ".json"));

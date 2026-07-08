@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "ipfs:hash-test-metadata": "node scripts/ipfs-hash-test-metadata.mjs",
-    "ipfs:upload-test-metadata": "node scripts/ipfs-upload-test-metadata.mjs"
+    "pinata:prepare-metadata": "node scripts/prepare-pinata-metadata.mjs",
+    "pinata:apply-metadata-uris": "node scripts/apply-pinata-metadata-uris.mjs",
+    "generate:deployment-assets": "node scripts/generate-deployment-assets.mjs"
   },
   "dependencies": {
     "@fontsource/space-grotesk": "^5.2.10",
