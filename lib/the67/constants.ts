@@ -1,163 +1,182 @@
-export type BeatStyle =
+export type SceneStyle =
+  | "intro"
   | "opening"
-  | "question"
-  | "statement"
-  | "pause"
   | "emphasis"
   | "manifesto"
-  | "agreement"
-  | "revelation";
+  | "revelation"
+  | "welcome"
+  | "creator";
 
+export type SceneType = "intro" | "text" | "gallery" | "creator";
+
+export interface TextScene {
+  id: number;
+  type: "text";
+  lines: string[];
+  style: SceneStyle;
+  /** Line index rendered with emphasis styling */
+  emphasisIndex?: number;
+}
+
+export interface GalleryScene {
+  id: number;
+  type: "gallery";
+}
+
+export interface CreatorScene {
+  id: number;
+  type: "creator";
+  lines: string[];
+}
+
+export interface IntroScene {
+  id: number;
+  type: "intro";
+}
+
+export type ExperienceScene =
+  | IntroScene
+  | TextScene
+  | GalleryScene
+  | CreatorScene;
+
+export const EXPERIENCE_SCENES: ExperienceScene[] = [
+  { id: 1, type: "intro" },
+  {
+    id: 2,
+    type: "text",
+    style: "opening",
+    lines: [
+      "You've probably seen 67 before.",
+      "You just never noticed.",
+      "67 is simply...",
+      "67.",
+    ],
+    emphasisIndex: 3,
+  },
+  {
+    id: 3,
+    type: "text",
+    style: "revelation",
+    lines: [
+      "People search for meaning.",
+      "Sometimes meaning already exists.",
+      "Sometimes people create it together.",
+    ],
+  },
+  {
+    id: 4,
+    type: "text",
+    style: "manifesto",
+    lines: [
+      "Gold.",
+      "Money.",
+      "Collectibles.",
+      "Memes.",
+      "",
+      "None of them have value",
+      "until enough people agree.",
+    ],
+  },
+  {
+    id: 5,
+    type: "text",
+    style: "emphasis",
+    lines: [
+      "THE67 is an experiment.",
+      "",
+      "Not about money.",
+      "Not about promises.",
+      "",
+      "About participation.",
+    ],
+    emphasisIndex: 0,
+  },
+  { id: 6, type: "gallery" },
+  {
+    id: 7,
+    type: "text",
+    style: "welcome",
+    lines: [
+      "If life feels meaningless...",
+      "or if you're simply looking for something different...",
+      "",
+      "You're welcome here.",
+      "",
+      "Meaning doesn't always exist first.",
+      "",
+      "Sometimes...",
+      "it begins because people choose to create it together.",
+    ],
+  },
+  {
+    id: 8,
+    type: "creator",
+    lines: [
+      "I don't know where THE67 will go.",
+      "I don't know what it will become.",
+      "But if you decide to stay...",
+      "I sincerely hope you find what you're looking for.",
+      "That's all.",
+    ],
+  },
+];
+
+export const SCENE_TIMING = {
+  transitionDuration: 1.4,
+  lineStagger: 0.12,
+  introFadeDuration: 1.6,
+} as const;
+
+/** @deprecated Legacy ending flow — replaced by CreatorScene */
+export const ENDING_TIMING = {
+  transitionDuration: SCENE_TIMING.transitionDuration,
+  blackoutFadeMs: 1400,
+  particleFreezeMs: 2000,
+} as const;
+
+/** @deprecated */
+export interface EndingBeat {
+  lines: string[];
+  style: SceneStyle;
+}
+
+/** @deprecated */
+export const ENDING_BEATS: EndingBeat[] = (() => {
+  const creator = EXPERIENCE_SCENES.find((scene) => scene.type === "creator");
+  if (creator?.type === "creator") {
+    return [{ lines: creator.lines, style: "creator" }];
+  }
+  return [];
+})();
+
+/** @deprecated */
+export function getEndingBeatDuration(style: SceneStyle): number {
+  return style === "creator" ? 8000 : 5000;
+}
+
+/** @deprecated Legacy story beats — replaced by EXPERIENCE_SCENES */
+export type BeatStyle =
+  | SceneStyle
+  | "question"
+  | "pause"
+  | "agreement"
+  | "attribution"
+  | "prelude"
+  | "epitaph";
+
+/** @deprecated */
 export interface StoryBeat {
   primary: string;
   secondary?: string;
   style: BeatStyle;
 }
 
-export const STORY_BEATS: StoryBeat[] = [
-  { primary: "You've probably seen this before.", style: "opening" },
-  { primary: "You just didn't notice.", style: "opening" },
-  { primary: "67.", style: "emphasis" },
-  { primary: "What is 67?", style: "question" },
+/** @deprecated */
+export const STORY_BEATS: StoryBeat[] = [];
 
-  { primary: "Nobody knows.", style: "statement" },
-  { primary: "No definition.", secondary: "No purpose.", style: "statement" },
-  { primary: "67 is simply...", style: "pause" },
-  { primary: "67.", style: "emphasis" },
-
-  { primary: "Why did millions repeat it?", style: "question" },
-  { primary: "Why imitate the meaningless?", style: "question" },
-  { primary: "Maybe...", style: "pause" },
-  { primary: "Meaning was never required.", style: "revelation" },
-
-  {
-    primary: "Gold has value",
-    secondary: "because people agree.",
-    style: "agreement",
-  },
-  {
-    primary: "Money has value",
-    secondary: "because people agree.",
-    style: "agreement",
-  },
-  {
-    primary: "Symbols spread",
-    secondary: "because people agree.",
-    style: "agreement",
-  },
-  { primary: "Value begins with belief.", style: "revelation" },
-
-  { primary: "Every generation creates symbols.", style: "manifesto" },
-  { primary: "Some become flags.", secondary: "Some become currencies.", style: "manifesto" },
-  { primary: "Some disappear.", style: "manifesto" },
-  { primary: "67 became one.", style: "revelation" },
-
-  { primary: "This isn't about a number.", style: "statement" },
-  {
-    primary: "Can the meaningless become meaningful",
-    secondary: "if enough people believe together?",
-    style: "revelation",
-  },
-];
-
-export type EndingBeatStyle =
-  | "reflection"
-  | "welcome"
-  | "understanding"
-  | "invitation"
-  | "creator"
-  | "epitaph";
-
-export interface EndingBeat {
-  lines: [string] | [string, string];
-  style: EndingBeatStyle;
-}
-
-export const ENDING_BEATS: EndingBeat[] = [
-  {
-    lines: [
-      "Meaning doesn't appear on its own.",
-      "It appears when people create it together.",
-    ],
-    style: "reflection",
-  },
-  {
-    lines: [
-      "If life has ever felt meaningless...",
-      "or you've wanted something to change...",
-    ],
-    style: "welcome",
-  },
-  { lines: ["you're welcome here."], style: "welcome" },
-  {
-    lines: [
-      "You don't have to understand 67.",
-      "You don't have to believe in it.",
-    ],
-    style: "understanding",
-  },
-  {
-    lines: ["Sometimes...", "people simply create something together."],
-    style: "understanding",
-  },
-  { lines: ["And that's enough."], style: "understanding" },
-  {
-    lines: [
-      "THE67 isn't asking you to buy something.",
-      "It isn't asking you to believe in a number.",
-    ],
-    style: "invitation",
-  },
-  { lines: ["It's simply an invitation."], style: "invitation" },
-  {
-    lines: [
-      "I don't know where THE67 will end.",
-      "I don't know what it will become.",
-    ],
-    style: "creator",
-  },
-  {
-    lines: [
-      "But if you choose to become part of it,",
-      "I sincerely hope...",
-    ],
-    style: "creator",
-  },
-  {
-    lines: ["that one day,", "you find what you've been looking for."],
-    style: "creator",
-  },
-  {
-    lines: ["No reason.", "No promise."],
-    style: "creator",
-  },
-  { lines: ["I simply hope you do."], style: "creator" },
-  {
-    lines: [
-      "Maybe meaning was never discovered.",
-      "Maybe we created it together.",
-    ],
-    style: "epitaph",
-  },
-];
-
-export function getEndingBeatDuration(style: EndingBeatStyle): number {
-  return ENDING_TIMING.beatDurations[style];
-}
-
-export const ENDING_TIMING = {
-  beatDurations: {
-    reflection: 9000,
-    welcome: 8000,
-    understanding: 8500,
-    invitation: 8000,
-    creator: 9000,
-    epitaph: 14000,
-  },
-  blackoutFadeMs: 2800,
-  epitaphHoldBeforeButtonMs: 7000,
-  transitionDuration: 1.8,
-} as const;
+/** @deprecated */
+export const STORY_TIMING = SCENE_TIMING;
 
 export const PARTICLE_CONFIG = {
   baseCount: 140,
@@ -178,29 +197,8 @@ export const PARTICLE_CONFIG = {
   parallaxStrength: 0.008,
 } as const;
 
-export const STORY_TIMING = {
-  displayDuration: 4500,
-  openingDuration: 3800,
-  pauseDuration: 4000,
-  emphasisDuration: 3500,
-  revelationDuration: 5500,
-  transitionDuration: 1.4,
-  introFadeDuration: 1.6,
-} as const;
+export const CURSOR_LERP = 0.52;
 
-export const CURSOR_LERP = 0.34;
-
-export function getBeatDuration(style: BeatStyle): number {
-  switch (style) {
-    case "opening":
-      return STORY_TIMING.openingDuration;
-    case "pause":
-      return STORY_TIMING.pauseDuration;
-    case "emphasis":
-      return STORY_TIMING.emphasisDuration;
-    case "revelation":
-      return STORY_TIMING.revelationDuration;
-    default:
-      return STORY_TIMING.displayDuration;
-  }
+export function getSceneCount(): number {
+  return EXPERIENCE_SCENES.length;
 }

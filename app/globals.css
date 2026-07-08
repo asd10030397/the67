@@ -16,9 +16,7 @@
 
 html,
 body {
-  height: 100%;
-  overflow: hidden;
-  cursor: none;
+  min-height: 100%;
   background: #000000;
   color: #ffffff;
   font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
@@ -26,8 +24,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+.the67-experience,
+.the67-experience * {
   cursor: none;
+}
+
+.the67-site a,
+.the67-site button {
+  cursor: pointer;
+}
+
+/* RainbowKit — match THE67 black/white aesthetic */
+[data-rk] {
+  --rk-fonts-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 .film-grain {

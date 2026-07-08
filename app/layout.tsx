@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import { AudioManager } from "@/components/audio/AudioManager";
+import { ParticipationManager } from "@/components/participation/ParticipationManager";
+import { AUDIO_CONFIG } from "@/lib/audio/constants";
+import { rootMetadata } from "@/lib/site/metadata";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "THE67",
-  description:
-    "An interactive philosophical experience about how meaning emerges from collective belief.",
-  robots: "noindex, nofollow",
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -17,10 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <head>
-        <link rel="preload" href="/audio/ambient.wav" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href={AUDIO_CONFIG.src} as="fetch" crossOrigin="anonymous" />
       </head>
-      <body className="h-full overflow-hidden bg-black text-white antialiased">
-        <AudioManager>{children}</AudioManager>
+      <body className="min-h-full bg-black text-white antialiased">
+        <ParticipationManager>
+          <AudioManager>{children}</AudioManager>
+        </ParticipationManager>
       </body>
     </html>
   );

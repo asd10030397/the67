@@ -6,23 +6,37 @@ import { EASE } from "@/lib/the67/motion";
 export function HeroIntro() {
   return (
     <motion.div
-      className="pointer-events-none flex flex-col items-center gap-10 text-center"
+      className="pointer-events-none flex flex-col items-center gap-12 text-center"
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { duration: 1.8, delay: 0.3, ease: EASE.entrance },
+        transition: { duration: 2.4, ease: EASE.entrance },
       }}
       exit={{
         opacity: 0,
-        transition: { duration: 1.2, ease: EASE.exit },
+        transition: { duration: 1.4, ease: EASE.exit },
       }}
     >
-      <h1 className="text-[clamp(5rem,16vw,11rem)] font-light leading-none tracking-[-0.06em] text-white">
-        67
-      </h1>
-      <p className="text-[10px] font-light tracking-[0.48em] text-white/22 uppercase">
+      <motion.h1
+        className="text-[clamp(3.5rem,14vw,9rem)] font-light leading-none tracking-[-0.06em] text-white"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 2, delay: 0.2, ease: EASE.entrance },
+        }}
+      >
+        THE67
+      </motion.h1>
+      <motion.p
+        className="text-[10px] font-light tracking-[0.5em] text-white/18 uppercase"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: { duration: 1.6, delay: 1.8, ease: EASE.entrance },
+        }}
+      >
         Click Anywhere
-      </p>
+      </motion.p>
     </motion.div>
   );
 }

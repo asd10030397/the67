@@ -35,6 +35,10 @@ interface AudioProviderProps {
   children: ReactNode;
 }
 
+// Survives React Strict Mode remounts so only one element is ever created.
+let persistentAudio: HTMLAudioElement | null = null;
+let isAudioInitialized = false;
+
 export function AudioProvider({ children }: AudioProviderProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeRafRef = useRef<number | null>(null);
@@ -43,6 +47,10 @@ export function AudioProvider({ children }: AudioProviderProps) {
   const startedRef = useRef(false);
   const pendingRetryRef = useRef(false);
   const readyRef = useRef(false);
+  const isInitializedRef = useRef(false);
+  const isPlayingRef = useRef(false);
+  const playInFlightRef = useRef<Promise<void> | null>(null);
+  const attemptPlaybackRef = useRef<() => Promise<void>>(async () => {});
 
   const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -53,6 +61,33 @@ export function AudioProvider({ children }: AudioProviderProps) {
       cancelAnimationFrame(fadeRafRef.current);
       fadeRafRef.current = null;
     }
+  }, []);
+
+  const waitUntilReady = useCallback((audio: HTMLAudioElement) => {
+    if (readyRef.current || audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      return Promise.resolve();
+    }
+
+    return new Promise<void>((resolve, reject) => {
+      const onReady = () => {
+        cleanup();
+        readyRef.current = true;
+        resolve();
+      };
+
+      const onErr = () => {
+        cleanup();
+        reject(audio.error ?? new Error("Audio failed to load"));
+      };
+
+      const cleanup = () => {
+        audio.removeEventListener("canplaythrough", onReady);
+        audio.removeEventListener("error", onErr);
+      };
+
+      audio.addEventListener("canplaythrough", onReady);
+      audio.addEventListener("error", onErr);
+    });
   }, []);
 
   const applyVolume = useCallback(() => {
@@ -99,52 +134,70 @@ export function AudioProvider({ children }: AudioProviderProps) {
     [applyVolume, cancelFade],
   );
 
-  const beginFadeIn = useCallback(() => {
-    fadeProgressRef.current = 0;
-    applyVolume();
-    runFade(0, 1, AUDIO_CONFIG.fadeInDurationMs, easeOutExpo);
-  }, [applyVolume, runFade]);
-
   const attemptPlayback = useCallback(async () => {
+    if (playInFlightRef.current) {
+      return playInFlightRef.current;
+    }
+
     const audio = audioRef.current;
     if (!audio) return;
 
-    try {
-      if (!startedRef.current) {
-        audio.currentTime = 0;
+    const playAttempt = (async () => {
+      try {
+        if (!startedRef.current) {
+          audio.currentTime = 0;
+        }
+
+        await waitUntilReady(audio);
+        await audio.play();
+        pendingRetryRef.current = false;
+
+        if (!startedRef.current) {
+          startedRef.current = true;
+          setHasStarted(true);
+          fadeProgressRef.current = AUDIO_CONFIG.initialVolume;
+          applyVolume();
+          runFade(AUDIO_CONFIG.initialVolume, 1, AUDIO_CONFIG.fadeInDurationMs, easeOutExpo);
+        } else if (!mutedRef.current && audio.volume === 0) {
+          fadeProgressRef.current = 1;
+          applyVolume();
+        }
+
+        isPlayingRef.current = true;
+        setIsPlaying(true);
+      } catch (error) {
+        if (
+          error instanceof DOMException &&
+          error.name === "AbortError" &&
+          !audio.paused
+        ) {
+          isPlayingRef.current = true;
+          setIsPlaying(true);
+          pendingRetryRef.current = false;
+          return;
+        }
+
+        pendingRetryRef.current = true;
+        isPlayingRef.current = false;
+        setIsPlaying(false);
+        console.error(
+          `[THE67 Audio] Playback failed for ${AUDIO_CONFIG.src}.`,
+          error,
+        );
+      } finally {
+        playInFlightRef.current = null;
       }
+    })();
 
-      if (audio.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
-        audio.load();
-      }
-
-      await audio.play();
-      pendingRetryRef.current = false;
-
-      if (!startedRef.current) {
-        startedRef.current = true;
-        setHasStarted(true);
-        beginFadeIn();
-      } else if (!mutedRef.current && audio.volume === 0) {
-        fadeProgressRef.current = 1;
-        applyVolume();
-      }
-
-      setIsPlaying(true);
-    } catch {
-      pendingRetryRef.current = true;
-      setIsPlaying(false);
-    }
-  }, [applyVolume, beginFadeIn]);
+    playInFlightRef.current = playAttempt;
+    return playAttempt;
+  }, [applyVolume, runFade, waitUntilReady]);
 
   const startAmbient = useCallback(() => {
-    void attemptPlayback();
-  }, [attemptPlayback]);
-
-  const handleInteraction = useCallback(() => {
-    if (!startedRef.current || pendingRetryRef.current) {
-      void attemptPlayback();
+    if (startedRef.current || isPlayingRef.current || playInFlightRef.current) {
+      return;
     }
+    void attemptPlayback();
   }, [attemptPlayback]);
 
   const toggleMute = useCallback(() => {
@@ -176,48 +229,75 @@ export function AudioProvider({ children }: AudioProviderProps) {
   }, [cancelFade, runFade]);
 
   useEffect(() => {
+    attemptPlaybackRef.current = attemptPlayback;
+  }, [attemptPlayback]);
+
+  useEffect(() => {
     mutedRef.current = isMuted;
   }, [isMuted]);
 
   useEffect(() => {
+    if (isAudioInitialized) {
+      isInitializedRef.current = true;
+      audioRef.current = persistentAudio;
+      return;
+    }
+
+    console.log("[THE67 Audio] Audio created");
     const audio = new Audio(AUDIO_CONFIG.src);
     audio.loop = true;
     audio.preload = "auto";
     audio.volume = 0;
+
+    persistentAudio = audio;
     audioRef.current = audio;
+    isAudioInitialized = true;
+    isInitializedRef.current = true;
+    console.log("[THE67 Audio] Audio initialized");
 
     const onCanPlay = () => {
       readyRef.current = true;
+      console.log(`[THE67 Audio] Loaded ${AUDIO_CONFIG.src}`);
     };
 
     const onError = () => {
       readyRef.current = false;
       pendingRetryRef.current = true;
+      const mediaError = audio.error;
+      console.error(
+        `[THE67 Audio] Failed to load ambient soundtrack at ${AUDIO_CONFIG.src}. Place the file at public${AUDIO_CONFIG.src}.`,
+        mediaError
+          ? { code: mediaError.code, message: mediaError.message }
+          : undefined,
+      );
     };
 
-    const onPause = () => setIsPlaying(false);
-    const onPlay = () => setIsPlaying(true);
+    const onPause = () => {
+      isPlayingRef.current = false;
+      setIsPlaying(false);
+    };
+
+    const onPlay = () => {
+      isPlayingRef.current = true;
+      setIsPlaying(true);
+    };
+
+    const onPointerDown = () => {
+      if (pendingRetryRef.current) {
+        void attemptPlaybackRef.current();
+      }
+    };
 
     audio.addEventListener("canplaythrough", onCanPlay);
     audio.addEventListener("error", onError);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("play", onPlay);
-    audio.load();
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
 
-    window.addEventListener("pointerdown", handleInteraction, { passive: true });
-
-    return () => {
-      cancelFade();
-      window.removeEventListener("pointerdown", handleInteraction);
-      audio.removeEventListener("canplaythrough", onCanPlay);
-      audio.removeEventListener("error", onError);
-      audio.removeEventListener("pause", onPause);
-      audio.removeEventListener("play", onPlay);
-      audio.pause();
-      audio.src = "";
-      audioRef.current = null;
-    };
-  }, [handleInteraction, cancelFade]);
+    if (audio.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
+      readyRef.current = true;
+    }
+  }, []);
 
   const value = useMemo(
     () => ({

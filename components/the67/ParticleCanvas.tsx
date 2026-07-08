@@ -16,6 +16,7 @@ type InternalPhase = "drift" | "converge" | "hold" | "dissolve";
 interface ParticleCanvasProps {
   storyProgress: number;
   mouseEnabled: boolean;
+  frozen: boolean;
   converge: boolean;
   onHoldComplete?: () => void;
   onDissolveComplete?: () => void;
@@ -24,6 +25,7 @@ interface ParticleCanvasProps {
 export function ParticleCanvas({
   storyProgress,
   mouseEnabled,
+  frozen,
   converge,
   onHoldComplete,
   onDissolveComplete,
@@ -34,6 +36,7 @@ export function ParticleCanvas({
   const sizeRef = useRef({ width: 0, height: 0, dpr: 1 });
   const progressRef = useRef(0);
   const mouseEnabledRef = useRef(mouseEnabled);
+  const frozenRef = useRef(frozen);
   const phaseRef = useRef<InternalPhase>("drift");
   const convergeRef = useRef(false);
   const holdStartRef = useRef<number | null>(null);
@@ -54,6 +57,10 @@ export function ParticleCanvas({
   useEffect(() => {
     mouseEnabledRef.current = mouseEnabled;
   }, [mouseEnabled]);
+
+  useEffect(() => {
+    frozenRef.current = frozen;
+  }, [frozen]);
 
   useEffect(() => {
     progressRef.current = storyProgress;
@@ -146,6 +153,8 @@ export function ParticleCanvas({
       const currentPhase = phaseRef.current;
       const parallaxEnabled = mouseEnabledRef.current && active;
 
+      const isFrozen = frozenRef.current;
+
       const targetCount = getParticleCountForProgress(progress);
       while (particles.length < targetCount) {
         particles.push(createParticle(width, height));
@@ -157,7 +166,7 @@ export function ParticleCanvas({
 
       const densityBoost = 1 + progress * 0.35;
       const repulsionRadiusSq = repulsionRadius * repulsionRadius;
-      const isDrifting = currentPhase === "drift";
+      const isDrifting = currentPhase === "drift" && !isFrozen;
       const centerX = width * 0.5;
       const centerY = height * 0.5;
       const parallaxDx = parallaxEnabled ? mx - centerX : 0;
@@ -180,6 +189,8 @@ export function ParticleCanvas({
         } else if (currentPhase === "dissolve") {
           p.baseX += (p.originX - p.baseX) * dissolveLerp;
           p.baseY += (p.originY - p.baseY) * dissolveLerp;
+        } else if (isFrozen) {
+          // hold positions — time paused
         } else {
           const driftScale = 0.55 + p.depth * 0.45;
           p.baseX += Math.cos(p.angle) * p.speed * driftScale;
@@ -213,9 +224,9 @@ export function ParticleCanvas({
         let x = p.baseX;
         let y = p.baseY;
 
-        if (isDrifting) {
-          x += p.offsetX + parallaxDx * p.depth * parallaxStrength;
-          y += p.offsetY + parallaxDy * p.depth * parallaxStrength;
+        if (isDrifting || (currentPhase === "drift" && isFrozen)) {
+          x += p.offsetX + (isFrozen ? 0 : parallaxDx * p.depth * parallaxStrength);
+          y += p.offsetY + (isFrozen ? 0 : parallaxDy * p.depth * parallaxStrength);
         }
 
         let opacity = Math.min(

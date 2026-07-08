@@ -11,38 +11,40 @@ import {
 } from "@/lib/the67/constants";
 import { JoinExperimentButton } from "./JoinExperimentButton";
 
+interface EndingSceneProps {
+  onParticleFreeze: (frozen: boolean) => void;
+}
+
 const beatVariants = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
     transition: {
       duration: ENDING_TIMING.transitionDuration,
-      delay: 0.25,
+      delay: 0.35,
       ease: EASE.entrance,
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: ENDING_TIMING.transitionDuration * 0.85,
+      duration: ENDING_TIMING.transitionDuration,
       ease: EASE.exit,
     },
   },
 };
 
-function getLineClasses(style: EndingBeat["style"], lineIndex: number): string {
-  if (style === "epitaph") {
-    return lineIndex === 0
-      ? "text-[clamp(1.05rem,2.6vw,1.65rem)] leading-[1.5] text-white/65"
-      : "text-[clamp(1.1rem,2.8vw,1.7rem)] leading-[1.48] text-white";
-  }
-
+function getLineClasses(style: EndingBeat["style"]): string {
   if (style === "creator") {
-    return "text-[clamp(0.88rem,2vw,1.2rem)] leading-[1.65] text-white/60";
+    return "text-[clamp(0.88rem,2vw,1.2rem)] leading-[1.7] text-white/60";
   }
 
-  if (style === "welcome" && lineIndex === 0) {
+  if (style === "welcome") {
     return "text-[clamp(0.95rem,2.2vw,1.3rem)] leading-[1.5] text-white/65";
+  }
+
+  if (style === "emphasis") {
+    return "text-[clamp(1.1rem,2.8vw,1.7rem)] leading-[1.48] text-white";
   }
 
   return "text-[clamp(0.9rem,2.1vw,1.3rem)] leading-[1.5] text-white/68";
@@ -65,7 +67,7 @@ const EndingBeatDisplay = memo(function EndingBeatDisplay({
       className="flex max-w-[26rem] flex-col items-center gap-4 text-center"
     >
       {beat.lines.map((line, i) => (
-        <p key={i} className={`font-light ${getLineClasses(beat.style, i)}`}>
+        <p key={i} className={`font-light ${getLineClasses(beat.style)}`}>
           {line}
         </p>
       ))}
@@ -73,7 +75,7 @@ const EndingBeatDisplay = memo(function EndingBeatDisplay({
   );
 });
 
-export function EndingScene() {
+export function EndingScene({ onParticleFreeze }: EndingSceneProps) {
   const [beatIndex, setBeatIndex] = useState(0);
   const [showButton, setShowButton] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -93,8 +95,12 @@ export function EndingScene() {
 
       if (index >= ENDING_BEATS.length - 1) {
         timerRef.current = setTimeout(() => {
-          setShowButton(true);
-        }, duration + ENDING_TIMING.epitaphHoldBeforeButtonMs);
+          onParticleFreeze(true);
+          timerRef.current = setTimeout(() => {
+            setShowButton(true);
+            onParticleFreeze(false);
+          }, ENDING_TIMING.particleFreezeMs);
+        }, duration);
         return;
       }
 
@@ -102,7 +108,7 @@ export function EndingScene() {
         setBeatIndex(index + 1);
       }, duration);
     },
-    [clearTimer],
+    [clearTimer, onParticleFreeze],
   );
 
   useEffect(() => {
@@ -110,13 +116,17 @@ export function EndingScene() {
     return clearTimer;
   }, [beatIndex, scheduleAdvance, clearTimer]);
 
+  useEffect(() => {
+    return () => onParticleFreeze(false);
+  }, [onParticleFreeze]);
+
   const currentBeat = ENDING_BEATS[beatIndex];
 
   return (
     <div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-14 md:px-24">
       <div className="flex min-h-[10rem] items-center justify-center">
         <AnimatePresence mode="wait">
-          {currentBeat && !showButton && (
+          {currentBeat && (
             <EndingBeatDisplay
               key={beatIndex}
               beat={currentBeat}

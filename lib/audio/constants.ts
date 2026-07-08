@@ -3,4 +3,5 @@ export const AUDIO_CONFIG = {
   targetVolume: 0.35,
   fadeInDurationMs: 5500,
   unmuteFadeDurationMs: 500,
+  initialVolume: 0.04,
 } as const;
