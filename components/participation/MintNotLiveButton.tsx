@@ -32,7 +32,8 @@ export function MintNotLiveButton({
         Mint Not Yet Live
       </button>
       <p className="max-w-[18rem] text-center text-[10px] font-light leading-[1.6] tracking-[0.06em] text-white/20">
-        Minting will open once the Genesis contract is deployed on Base.
+        Minting will open once the Genesis contract address is configured for
+        this deployment.
       </p>
     </div>
   );

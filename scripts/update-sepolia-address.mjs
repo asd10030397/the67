@@ -28,8 +28,8 @@ fs.writeFileSync(envPath, envText);
 const mintPath = path.join(root, "lib", "participation", "mint.ts");
 let mintText = fs.readFileSync(mintPath, "utf8");
 mintText = mintText.replace(
-  /const SEPOLIA_DEPLOYED_CONTRACT_ADDRESS: `0x\$\{string\}` \| null = [^;]+;/,
-  `const SEPOLIA_DEPLOYED_CONTRACT_ADDRESS: \`0x\${string}\` | null = "${address}";`,
+  /const SEPOLIA_DEV_FALLBACK_ADDRESS: `0x\$\{string\}` \| null =[\s\S]*?null;/,
+  `const SEPOLIA_DEV_FALLBACK_ADDRESS: \`0x\${string}\` | null =\n  process.env.NODE_ENV === "development"\n    ? "${address}"\n    : null;`,
 );
 fs.writeFileSync(mintPath, mintText);
 

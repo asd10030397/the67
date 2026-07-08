@@ -2,6 +2,7 @@
 
 import {
   GENESIS_MINT_CONFIG,
+  getMintOpensDisplay,
   getMintStatusLabel,
 } from "@/lib/participation/mint";
 import { shortenWallet } from "@/lib/participation/mock";
@@ -25,8 +26,18 @@ function MintField({ label, value }: { label: string; value: string }) {
 }
 
 export function MintInfoPanel({ participationRecord }: MintInfoPanelProps) {
-  const { network, priceDisplay, supply, publicSupply, creatorArchiveSupply, maxPerWallet, status } =
-    GENESIS_MINT_CONFIG;
+  const {
+    network,
+    priceDisplay,
+    supply,
+    publicSupply,
+    creatorArchiveSupply,
+    maxPerWallet,
+    maxPerTransaction,
+    status,
+    initialMintWindowHours,
+    mintWindowPolicy,
+  } = GENESIS_MINT_CONFIG;
 
   return (
     <div className="w-full max-w-[22rem] text-left">
@@ -44,9 +55,31 @@ export function MintInfoPanel({ participationRecord }: MintInfoPanelProps) {
         <MintField label="Price" value={priceDisplay} />
         <MintField label="Supply" value={String(supply)} />
         <MintField label="Public" value={String(publicSupply)} />
-        <MintField label="Creator Archive" value={String(creatorArchiveSupply)} />
+        <MintField label="Creator Reserve" value={String(creatorArchiveSupply)} />
         <MintField label="Per Wallet" value={String(maxPerWallet)} />
+        <MintField label="Per Transaction" value={String(maxPerTransaction)} />
+        <MintField label="Mint Opens" value={getMintOpensDisplay(GENESIS_MINT_CONFIG)} />
+        <MintField
+          label="Initial Window"
+          value={`${initialMintWindowHours} hours`}
+        />
         <MintField label="Mint Status" value={getMintStatusLabel(status)} />
+      </div>
+
+      <div className="mt-6 space-y-3 border-t border-white/[0.06] pt-5">
+        <p className="text-[10px] font-light tracking-[0.2em] text-white/25 uppercase">
+          Mint Window Policy
+        </p>
+        <ul className="space-y-2">
+          {mintWindowPolicy.map((line) => (
+            <li
+              key={line}
+              className="text-[10px] font-light leading-[1.65] tracking-[0.04em] text-white/40"
+            >
+              {line}
+            </li>
+          ))}
+        </ul>
       </div>
 
       {participationRecord ? (

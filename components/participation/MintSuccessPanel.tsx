@@ -4,9 +4,10 @@ import {
   getBaseScanTokenUrl,
   getBaseScanTxUrl,
   getGenesisContractAddress,
-  getOpenSeaTestnetAssetUrl,
+  getOpenSeaAssetUrl,
   shortenTxHash,
 } from "@/lib/participation/contract";
+import { GENESIS_MINT_CONFIG } from "@/lib/participation/mint";
 import { useParticipation } from "./ParticipationProvider";
 
 export function MintSuccessPanel() {
@@ -29,7 +30,7 @@ export function MintSuccessPanel() {
       </div>
 
       <p className="text-[10px] font-light leading-[1.6] tracking-[0.08em] text-white/45">
-        Your Citizen has been minted on Base Sepolia.
+        Your Citizen has been minted on {GENESIS_MINT_CONFIG.network}.
       </p>
 
       <div className="flex w-full flex-col gap-3">
@@ -50,7 +51,7 @@ export function MintSuccessPanel() {
           View on BaseScan
         </a>
         <a
-          href={getOpenSeaTestnetAssetUrl(contractAddress, tokenId)}
+          href={getOpenSeaAssetUrl(contractAddress, tokenId)}
           target="_blank"
           rel="noopener noreferrer"
           className="text-[10px] font-light tracking-[0.12em] text-white/55 underline-offset-4 hover:text-white/80 hover:underline"

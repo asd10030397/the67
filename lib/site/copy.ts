@@ -47,6 +47,16 @@ export const PARTICIPATE_COPY = {
       ],
     },
     {
+      title: "Genesis Citizens",
+      body: [
+        "THE67 Genesis Citizens are a limited collection of 67 collectible figures on Base — 63 available to the public and 4 held in a creator reserve.",
+        "Public mint on Base mainnet opens July 10, 2026 at 15:00 UTC. Price is 0.0067 ETH. Each wallet may mint one Citizen, one per transaction.",
+        "Base Sepolia is used for temporary testnet minting only — not the mainnet launch schedule.",
+        "The initial mint window runs for 48 hours. If all 63 public Citizens are minted, the sale ends automatically. If the collection is not sold out, the mint end time may be extended on-chain without redeploying the contract.",
+        "Creator reserve Citizens are never minted automatically. They are only available through reserveMint() by the owner, at the owner's discretion.",
+      ],
+    },
+    {
       title: "Document Your Participation",
       body: [
         "Keep a record. Not for proof. Not for validation. But because choosing to participate is worth remembering.",
@@ -68,12 +78,22 @@ export const FAQ_COPY = {
     {
       question: "Is THE67 a cryptocurrency or NFT?",
       answer:
-        "No. THE67 is not a financial instrument, token, or collectible. It is an experience — nothing more, nothing less.",
+        "THE67 is primarily an interactive philosophical experience. A limited Genesis Citizens collection of 67 NFTs exists on Base as a collectible expression of participation — not a token, investment, or promise of returns.",
+    },
+    {
+      question: "What is the Genesis Citizens mint?",
+      answer:
+        "Genesis Citizens is a collection of 67 NFTs on Base. The public mint opens July 10, 2026 at 15:00 UTC at 0.0067 ETH. Public supply is 63, with a limit of one per wallet and one per transaction. Four Citizens are reserved for the creator and are never minted automatically.",
+    },
+    {
+      question: "How long does the mint window last?",
+      answer:
+        "The initial public mint runs for 48 hours. If all 63 public Citizens are minted before then, the sale ends automatically. If the collection is not sold out, the owner may extend the mint end time on-chain without redeploying the contract.",
     },
     {
       question: "What does participation require?",
       answer:
-        "Nothing beyond your attention and a choice. There is no signup, no fee, and no obligation. Participation is personal and self-defined.",
+        "Nothing beyond your attention and a choice. There is no signup, no fee, and no obligation. Participation is personal and self-defined. Minting a Genesis Citizen is optional and separate from participating in the experience.",
     },
     {
       question: "Why the number 67?",

@@ -14,7 +14,6 @@ import {
   getBaseScanTokenUrl,
   getBaseScanTxUrl,
   getGenesisContractAddress,
-  getOpenSeaTestnetAssetUrl,
   shortenTxHash,
 } from "@/lib/participation/contract";
 import {
@@ -162,7 +161,7 @@ export function MintActionButton({
     if (!contractAddress || !address) return;
     if (mintOpen === false) {
       setUiState("error");
-      setErrorMessage("Public mint is not open on Base Sepolia.");
+      setErrorMessage(`Public mint is not open on ${GENESIS_MINT_CONFIG.network}.`);
       return;
     }
 
