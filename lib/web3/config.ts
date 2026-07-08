@@ -5,7 +5,7 @@ import {
   rabbyWallet,
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
-import { baseSepolia } from "wagmi/chains";
+import { base } from "wagmi/chains";
 
 const projectId =
   process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ??
@@ -16,7 +16,7 @@ export const wagmiConfig = getDefaultConfig({
   appDescription:
     "An interactive philosophical experience about how meaning emerges from collective belief.",
   projectId,
-  chains: [baseSepolia],
+  chains: [base],
   ssr: true,
   wallets: [
     {
