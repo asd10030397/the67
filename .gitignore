@@ -43,11 +43,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# foundry
+# foundry build artifacts
 cache/
 out/
 broadcast/
-lib/
+lib/forge-std/
+lib/openzeppelin-contracts/
+lib/ERC721A/
 
 # generated test metadata archive
 /metadata-test/revealed.zip
