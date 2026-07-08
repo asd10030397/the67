@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #42 — Harvest",
+  "description": "Gold waits in open fields. — Harvest is a THE67 Genesis Citizen from Amber Field.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000042.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000042"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Amber Field"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, signal coral micro accent dots"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small wheat stalk in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bright — upright energetic stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Gold waits in open fields."
+    }
+  ]
+}

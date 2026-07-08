@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #22 — Brine",
+  "description": "The tide knows our names. — Brine is a THE67 Genesis Citizen from Harbor Salt.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000022.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000022"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Harbor Salt"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Ocean teal body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal salt-white sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small salt crystal at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "The tide knows our names."
+    }
+  ]
+}

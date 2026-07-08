@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #35 — Gale",
+  "description": "Wind carries what we sow. — Gale is a THE67 Genesis Citizen from Prairie Wind.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000035.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000035"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Prairie Wind"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin prairie-grass collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small prairie feather on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Wind carries what we sow."
+    }
+  ]
+}

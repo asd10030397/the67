@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #39 — Forge",
+  "description": "Heat shapes what we make. — Forge is a THE67 Genesis Citizen from Copper Forge.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000039.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000039"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Copper Forge"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Polished stone texture vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, copper accent in 6 counter-hole"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small copper ingot in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Heat shapes what we make."
+    }
+  ]
+}

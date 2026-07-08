@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #45 — Hollow",
+  "description": "Fog softens what we see. — Hollow is a THE67 Genesis Citizen from Mist Valley.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000045.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000045"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Mist Valley"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl, wool felt limb texture"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, citizen white felt capsule limbs"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin mist-gray collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small valley blossom on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Fog softens what we see."
+    }
+  ]
+}

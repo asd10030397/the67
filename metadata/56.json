@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #56 — Needle",
+  "description": "Peaks teach us patience. — Needle is a THE67 Genesis Citizen from Pine Ridge.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000056.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000056"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Pine Ridge"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Moss green body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small pine sprig in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Reserved — arms at rest, upright balance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Peaks teach us patience."
+    }
+  ]
+}

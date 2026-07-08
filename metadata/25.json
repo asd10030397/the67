@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #25 — Sable",
+  "description": "Silence settles where we stand. — Sable is a THE67 Genesis Citizen from Dune Silence.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000025.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000025"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Dune Silence"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Paper clay matte finish vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, soft ash micro accent dots"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Woven desert sash at waist seam (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small sand hourglass at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Silence settles where we stand."
+    }
+  ]
+}

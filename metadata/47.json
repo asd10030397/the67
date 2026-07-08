@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #47 — Lantern",
+  "description": "We light what we choose. — Lantern is a THE67 Genesis Citizen from Indigo Night.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000047.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000047"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Indigo Night"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent resin with 15% inner glow"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Dusk violet body, soft internal violet glow"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny lantern held in hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "We light what we choose."
+    }
+  ]
+}

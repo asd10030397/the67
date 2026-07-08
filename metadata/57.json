@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #57 — Pond",
+  "description": "Still water reflects us all. — Pond is a THE67 Genesis Citizen from Lotus Basin.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000057.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000057"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Lotus Basin"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Ocean teal body, warm cream lotus trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal lotus sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small lotus bud in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Still water reflects us all."
+    }
+  ]
+}

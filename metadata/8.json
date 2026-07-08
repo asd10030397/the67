@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #8 — Drift",
+  "description": "Movement finds us together. — Drift is a THE67 Genesis Citizen from Steppe Drift.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000008.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000008"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Steppe Drift"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Warm cream body, sand gold waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small bronze compass disc in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Movement finds us together."
+    }
+  ]
+}

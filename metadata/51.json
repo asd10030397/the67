@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #51 — Bloom",
+  "description": "Cold can still bloom. — Bloom is a THE67 Genesis Citizen from Frost Garden.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000051.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000051"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Frost Garden"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl, wool felt limb texture"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft ash felt capsule limbs"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny frost flower on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Cold can still bloom."
+    }
+  ]
+}

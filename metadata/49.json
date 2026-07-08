@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #49 — Beacon",
+  "description": "Stars mark where we land. — Beacon is a THE67 Genesis Citizen from Starlit Port.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000049.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000049"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Starlit Port"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Ocean teal body, sand gold waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny harbor star in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Stars mark where we land."
+    }
+  ]
+}

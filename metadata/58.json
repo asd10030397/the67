@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #58 — Sands",
+  "description": "Time is agreed upon. — Sands is a THE67 Genesis Citizen from Sandglass.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000058.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000058"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Sandglass"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, soft ash waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny sandglass pendant at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Time is agreed upon."
+    }
+  ]
+}

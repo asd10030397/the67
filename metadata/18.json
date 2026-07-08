@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #18 — Cinder",
+  "description": "From ruin, new ground forms. — Cinder is a THE67 Genesis Citizen from Volcanic Ash.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000018.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000018"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Volcanic Ash"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Paper clay matte finish vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, charcoal accent in 6 counter-hole"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small obsidian shard in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Reserved — arms at rest, upright balance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "From ruin, new ground forms."
+    }
+  ]
+}

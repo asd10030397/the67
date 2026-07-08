@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #62 — Steps",
+  "description": "Every step shapes the way. — Steps is a THE67 Genesis Citizen from Pebble Path.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000062.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000062"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Pebble Path"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, warm cream pebble micro dots"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small pebble strand at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Every step shapes the way."
+    }
+  ]
+}

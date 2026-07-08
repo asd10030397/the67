@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #55 — Glow",
+  "description": "Stone remembers the flame. — Glow is a THE67 Genesis Citizen from Stone Lantern.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000055.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000055"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Stone Lantern"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Polished stone texture vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, sand gold accent in 6 counter-hole"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small stone lamp in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Reserved — arms at rest, upright balance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Stone remembers the flame."
+    }
+  ]
+}

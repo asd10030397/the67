@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #4 — Mirage",
+  "description": "Distance is agreed upon. — Mirage is a THE67 Genesis Citizen from Sahel Horizon.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000004.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000004"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Sahel Horizon"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin sand gold collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny horizon bead on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Distance is agreed upon."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #63 — Prism",
+  "description": "Glass bends what falls. — Prism is a THE67 Genesis Citizen from Rain Glass.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000063.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000063"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Rain Glass"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent resin with 10% inner glow"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft ocean teal rain glow"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny rain prism shard in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Glass bends what falls."
+    }
+  ]
+}

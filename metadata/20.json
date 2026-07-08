@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #20 — Blush",
+  "description": "Beauty survives the dry places. — Blush is a THE67 Genesis Citizen from Desert Rose.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000020.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000020"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Desert Rose"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Clay terracotta body, sand gold waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin desert rose collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny rose petal on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Beauty survives the dry places."
+    }
+  ]
+}

@@ -1,0 +1,1304 @@
+{
+  "generatedAt": "2026-07-08T20:31:29.874Z",
+  "totalFiles": 67,
+  "imageBase": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u",
+  "validation": {
+    "passed": true,
+    "errors": []
+  },
+  "duplicates": {
+    "names": [],
+    "quotes": [],
+    "cultures": [],
+    "attributes": [
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          5
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          5
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          5
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          8
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Warm cream body, sand gold waist trim",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          8
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          8
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          9
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          10
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          10
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          10
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          11
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          11
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          12
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          13
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          13
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          14
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          14
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          14
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte vinyl, wool felt limb texture",
+        "tokens": [
+          3,
+          15
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Citizen white body, soft ash felt capsule limbs",
+        "tokens": [
+          3,
+          15
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          15
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          15
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          16
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          16
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          17
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Ocean teal body, soft white highlight on 6 belly",
+        "tokens": [
+          9,
+          17
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          17
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Paper clay matte finish vinyl",
+        "tokens": [
+          12,
+          18
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          18
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          18
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          19
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          19
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Playful — one arm slightly raised",
+        "tokens": [
+          9,
+          19
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          20
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          20
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Translucent resin with 10% inner glow",
+        "tokens": [
+          6,
+          21
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          21
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          21
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          22
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          22
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Polished stone texture vinyl",
+        "tokens": [
+          2,
+          23
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          23
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          23
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte vinyl, wool felt limb texture",
+        "tokens": [
+          3,
+          24
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          24
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Paper clay matte finish vinyl",
+        "tokens": [
+          12,
+          25
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          25
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          26
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          26
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          26
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          27
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Playful — one arm slightly raised",
+        "tokens": [
+          9,
+          27
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Translucent resin with 10% inner glow",
+        "tokens": [
+          6,
+          28
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          28
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          28
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Polished stone texture vinyl",
+        "tokens": [
+          2,
+          29
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          29
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          29
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          30
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          30
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          31
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          31
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          31
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          32
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          33
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          33
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          33
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Warm cream body, sand gold waist trim",
+        "tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          34
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          35
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Sand gold body, warm cream waist trim",
+        "tokens": [
+          4,
+          35
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          35
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte vinyl, wool felt limb texture",
+        "tokens": [
+          3,
+          36
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          36
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          36
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Paper clay matte finish vinyl",
+        "tokens": [
+          12,
+          37
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          37
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          38
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          38
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          38
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Polished stone texture vinyl",
+        "tokens": [
+          2,
+          39
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          39
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          39
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          40
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          40
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          41
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          41
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          42
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          42
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bright — upright energetic stance",
+        "tokens": [
+          32,
+          42
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Translucent resin with 10% inner glow",
+        "tokens": [
+          6,
+          43
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          43
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          43
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          44
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          44
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          44
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte vinyl, wool felt limb texture",
+        "tokens": [
+          3,
+          45
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "Thin mist-gray collar wrap at waist seam only",
+        "tokens": [
+          24,
+          45
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          45
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          46
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Sand gold body, warm cream waist trim",
+        "tokens": [
+          4,
+          46
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          46
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          47
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          47
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          48
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Dusk violet body, soft ash waist trim",
+        "tokens": [
+          31,
+          48
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          48
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          49
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          49
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          49
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Paper clay matte finish vinyl",
+        "tokens": [
+          12,
+          50
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          50
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte vinyl, wool felt limb texture",
+        "tokens": [
+          3,
+          51
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Citizen white body, soft ash felt capsule limbs",
+        "tokens": [
+          3,
+          51
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          51
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          51
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          52
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          52
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bright — upright energetic stance",
+        "tokens": [
+          32,
+          52
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          53
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Soft ash body, ocean teal waist trim",
+        "tokens": [
+          41,
+          53
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Playful — one arm slightly raised",
+        "tokens": [
+          9,
+          53
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Translucent resin with 10% inner glow",
+        "tokens": [
+          6,
+          54
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          54
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          54
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Polished stone texture vinyl",
+        "tokens": [
+          2,
+          55
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          55
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          55
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          56
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Moss green body, warm cream waist trim",
+        "tokens": [
+          30,
+          56
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          56
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          56
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          57
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          57
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          58
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          58
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          58
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          59
+        ]
+      },
+      {
+        "trait_type": "Body Colors",
+        "value": "Soft ash body, ocean teal waist trim",
+        "tokens": [
+          41,
+          59
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Gentle — soft relaxed stance",
+        "tokens": [
+          3,
+          59
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Paper clay matte finish vinyl",
+        "tokens": [
+          12,
+          60
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          60
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Reserved — arms at rest, upright balance",
+        "tokens": [
+          2,
+          60
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          61
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          61
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          61
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          62
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          62
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Curious — slight forward lean",
+        "tokens": [
+          7,
+          62
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Translucent resin with 10% inner glow",
+        "tokens": [
+          6,
+          63
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None",
+        "tokens": [
+          6,
+          63
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Dreamy — light float pose",
+        "tokens": [
+          6,
+          63
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          64
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          64
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl with glazed ceramic trim",
+        "tokens": [
+          7,
+          65
+        ]
+      },
+      {
+        "trait_type": "Clothing",
+        "value": "None on digit silhouette",
+        "tokens": [
+          2,
+          65
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Still — upright neutral stance",
+        "tokens": [
+          1,
+          65
+        ]
+      },
+      {
+        "trait_type": "Material",
+        "value": "Matte Vinyl",
+        "tokens": [
+          1,
+          66
+        ]
+      },
+      {
+        "trait_type": "Personality",
+        "value": "Bold — wide stance",
+        "tokens": [
+          4,
+          66
+        ]
+      }
+    ]
+  }
+}

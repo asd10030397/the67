@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #41 — Quay",
+  "description": "Safe harbor is shared ground. — Quay is a THE67 Genesis Citizen from Slate Harbor.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000041.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000041"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Slate Harbor"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, ocean teal waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal slate-gray sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small slate token at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Safe harbor is shared ground."
+    }
+  ]
+}

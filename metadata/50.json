@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #50 — Hearth",
+  "description": "Warmth begins at the center. — Hearth is a THE67 Genesis Citizen from Ember Hearth.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000050.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000050"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Ember Hearth"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Paper clay matte finish vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Clay terracotta body, signal coral accent dots"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Woven hearth sash at waist seam (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small hearth flame charm at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Warmth begins at the center."
+    }
+  ]
+}

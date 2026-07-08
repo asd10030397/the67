@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #66 — Gust",
+  "description": "Warmth returns from below. — Gust is a THE67 Genesis Citizen from South Wind.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000066.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000066"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "South Wind"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, signal coral wind trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin wind-collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small south wind plume on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Warmth returns from below."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #38 — Pillar",
+  "description": "Order is built together. — Pillar is a THE67 Genesis Citizen from Marble Court.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000038.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000038"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Marble Court"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Warm cream body, soft ash waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny marble column in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Order is built together."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #31 — Wander",
+  "description": "Horizons follow willing feet. — Wander is a THE67 Genesis Citizen from Nomad Sky.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000031.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000031"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Nomad Sky"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Dusk violet body, soft ash waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small nomad star pin on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Horizons follow willing feet."
+    }
+  ]
+}

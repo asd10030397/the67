@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #43 — Facet",
+  "description": "Light finds every facet. — Facet is a THE67 Genesis Citizen from Quartz Peak.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000043.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000043"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Quartz Peak"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent resin with 10% inner glow"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft quartz inner glow"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny quartz crystal point in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Light finds every facet."
+    }
+  ]
+}

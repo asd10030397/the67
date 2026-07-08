@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #46 — Sol",
+  "description": "Light is what we agree. — Sol is a THE67 Genesis Citizen from Sun Temple.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000046.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000046"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Sun Temple"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Sand gold body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin sun-collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny sun disc on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Light is what we agree."
+    }
+  ]
+}

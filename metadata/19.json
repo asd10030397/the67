@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #19 — Grove",
+  "description": "Growth bends toward the light. — Grove is a THE67 Genesis Citizen from Bamboo Grove.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000019.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000019"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Bamboo Grove"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Moss green body, warm cream highlight on 6 belly"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small bamboo shoot in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Playful — one arm slightly raised"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Growth bends toward the light."
+    }
+  ]
+}

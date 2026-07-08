@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #24 — Veil",
+  "description": "Mist hides nothing we share. — Veil is a THE67 Genesis Citizen from Rainforest Mist.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000024.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000024"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Rainforest Mist"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl, wool felt limb texture"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Moss green body, soft ash felt capsule limbs"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin mist-gray collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small fern frond in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Mist hides nothing we share."
+    }
+  ]
+}

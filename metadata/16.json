@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #16 — Crossing",
+  "description": "Exchange is how we meet. — Crossing is a THE67 Genesis Citizen from River Market.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000016.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000016"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "River Market"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Warm cream body, moss green waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Woven market sash at waist seam (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small woven basket charm at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Exchange is how we meet."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #1 — Genesis Prime",
+  "description": "The first to notice. — Genesis Prime is a THE67 Genesis Citizen from Nordic Still.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000001.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000001"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Nordic Still"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Pure white body, soft ash limb accents"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None — canonical founding form"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Single minimal star stud on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "The first to notice."
+    }
+  ]
+}

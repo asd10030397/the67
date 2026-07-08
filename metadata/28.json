@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #28 — Pool",
+  "description": "Clarity lives beneath the surface. — Pool is a THE67 Genesis Citizen from Lagoon Glass.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000028.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000028"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Lagoon Glass"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent resin with 10% inner glow"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Ocean teal body, soft lagoon glass inner glow"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny glass droplet held in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Clarity lives beneath the surface."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #11 — Loom",
+  "description": "Warmth is woven slowly. — Loom is a THE67 Genesis Citizen from Highland Wool.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000011.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000011"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Highland Wool"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl body, wool felt limb texture"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, warm cream felt capsule limbs"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small wool tuft on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Reserved — arms at rest, upright balance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Warmth is woven slowly."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #53 — Stream",
+  "description": "Currents carry our intentions. — Stream is a THE67 Genesis Citizen from Silver Creek.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000053.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000053"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Silver Creek"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Soft ash body, ocean teal waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal creek-blue sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny silver fish charm at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Playful — one arm slightly raised"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Currents carry our intentions."
+    }
+  ]
+}

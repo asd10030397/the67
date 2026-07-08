@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #13 — Gleam",
+  "description": "Light arrives before meaning. — Gleam is a THE67 Genesis Citizen from Fjord Light.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000013.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000013"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Fjord Light"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, ocean teal accent trim at waist"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin fjord-blue collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny lighthouse stub on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Light arrives before meaning."
+    }
+  ]
+}

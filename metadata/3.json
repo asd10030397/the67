@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #3 — Mist",
+  "description": "Clarity comes when we wait. — Mist is a THE67 Genesis Citizen from Baltic Fog.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000003.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000003"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Baltic Fog"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte vinyl, wool felt limb texture"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft ash felt capsule limbs"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin fog-gray collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "None"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Clarity comes when we wait."
+    }
+  ]
+}

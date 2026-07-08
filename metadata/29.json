@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #29 — Echo",
+  "description": "Sound returns what we send. — Echo is a THE67 Genesis Citizen from Canyon Echo.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000029.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000029"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Canyon Echo"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Polished stone texture vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Clay terracotta body, sand gold accent in 6 counter-hole"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small canyon stone disc in right hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Sound returns what we send."
+    }
+  ]
+}

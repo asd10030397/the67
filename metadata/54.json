@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #54 — Nimbus",
+  "description": "Height is a shared perspective. — Nimbus is a THE67 Genesis Citizen from Cloud Terrace.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000054.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000054"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Cloud Terrace"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent resin with 10% inner glow"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft cloud inner glow"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small cloud puff on 7 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Dreamy — light float pose"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Height is a shared perspective."
+    }
+  ]
+}

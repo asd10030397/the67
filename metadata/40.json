@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #40 — Jade",
+  "description": "Stillness grows in gardens. — Jade is a THE67 Genesis Citizen from Jade Garden.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000040.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000040"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Jade Garden"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Moss green body, ocean teal jade accent trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal jade-green sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny jade leaf charm at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Stillness grows in gardens."
+    }
+  ]
+}

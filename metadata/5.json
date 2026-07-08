@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #5 — Summit",
+  "description": "Stillness is a kind of answer. — Summit is a THE67 Genesis Citizen from Himalayan Quiet.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000005.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000005"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Himalayan Quiet"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Pure white body, soft ash highlight on 6 belly"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Minimal prayer cord loop at waist (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Stillness is a kind of answer."
+    }
+  ]
+}

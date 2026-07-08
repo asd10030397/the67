@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #65 — Polaris",
+  "description": "One light guides many. — Polaris is a THE67 Genesis Citizen from North Star.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000065.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000065"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "North Star"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, sand gold star trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small north star point in left hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Still — upright neutral stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "One light guides many."
+    }
+  ]
+}

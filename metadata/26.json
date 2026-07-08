@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #26 — Frost",
+  "description": "Cold clarifies what we keep. — Frost is a THE67 Genesis Citizen from Alpine Snow.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000026.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000026"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Alpine Snow"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Citizen white body, soft ash highlight on 6 belly"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "None on digit silhouette"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny snowflake on 6 head (Slot A)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Reserved — arms at rest, upright balance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Cold clarifies what we keep."
+    }
+  ]
+}

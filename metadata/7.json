@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #7 — Seventh Sun",
+  "description": "Luck is agreed upon. — Seventh Sun is a THE67 Genesis Citizen from Mediterranean Sun.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000007.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000007"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Mediterranean Sun"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl with glazed ceramic trim"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Warm cream body, sand gold waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Thin gold collar wrap at waist seam only"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small golden disc held in right capsule hand (Slot C)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Curious — slight forward lean"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Luck is agreed upon."
+    }
+  ]
+}

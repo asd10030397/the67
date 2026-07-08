@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #12 — Delta",
+  "description": "Form follows what we hold. — Delta is a THE67 Genesis Citizen from Delta Clay.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000012.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000012"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Delta Clay"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Paper clay matte finish vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Clay terracotta body, ocean teal micro accent dots"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Woven river-clay sash at waist seam"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Small clay bead strand at waist (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Bold — wide stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Form follows what we hold."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "THE67 Genesis Citizen #30 — Steep",
+  "description": "Patience brews between us. — Steep is a THE67 Genesis Citizen from Tea Garden.",
+  "image": "ipfs://bafybeiaelnp7fcq2l5xjakzc27lrejapg3gvigfg5tqv66fyufpghwmh5u/000030.png",
+  "attributes": [
+    {
+      "trait_type": "Citizen ID",
+      "value": "000030"
+    },
+    {
+      "trait_type": "Culture",
+      "value": "Tea Garden"
+    },
+    {
+      "trait_type": "Generation",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Matte Vinyl"
+    },
+    {
+      "trait_type": "Body Colors",
+      "value": "Moss green body, warm cream waist trim"
+    },
+    {
+      "trait_type": "Clothing",
+      "value": "Minimal tea-green sash at waist (10% coverage)"
+    },
+    {
+      "trait_type": "Accessories",
+      "value": "Tiny tea leaf charm at waist belt (Slot B)"
+    },
+    {
+      "trait_type": "Personality",
+      "value": "Gentle — soft relaxed stance"
+    },
+    {
+      "trait_type": "Quote",
+      "value": "Patience brews between us."
+    }
+  ]
+}
