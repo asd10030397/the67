@@ -18,6 +18,7 @@ interface AudioContextValue {
   isPlaying: boolean;
   hasStarted: boolean;
   toggleMute: () => void;
+  startAmbient: () => void;
 }
 
 const AudioContext = createContext<AudioContextValue | null>(null);
@@ -41,6 +42,7 @@ export function AudioProvider({ children }: AudioProviderProps) {
   const mutedRef = useRef(false);
   const startedRef = useRef(false);
   const pendingRetryRef = useRef(false);
+  const readyRef = useRef(false);
 
   const [isMuted, setIsMuted] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -112,6 +114,10 @@ export function AudioProvider({ children }: AudioProviderProps) {
         audio.currentTime = 0;
       }
 
+      if (audio.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+        audio.load();
+      }
+
       await audio.play();
       pendingRetryRef.current = false;
 
@@ -130,6 +136,10 @@ export function AudioProvider({ children }: AudioProviderProps) {
       setIsPlaying(false);
     }
   }, [applyVolume, beginFadeIn]);
+
+  const startAmbient = useCallback(() => {
+    void attemptPlayback();
+  }, [attemptPlayback]);
 
   const handleInteraction = useCallback(() => {
     if (!startedRef.current || pendingRetryRef.current) {
@@ -176,17 +186,31 @@ export function AudioProvider({ children }: AudioProviderProps) {
     audio.volume = 0;
     audioRef.current = audio;
 
+    const onCanPlay = () => {
+      readyRef.current = true;
+    };
+
+    const onError = () => {
+      readyRef.current = false;
+      pendingRetryRef.current = true;
+    };
+
     const onPause = () => setIsPlaying(false);
     const onPlay = () => setIsPlaying(true);
 
+    audio.addEventListener("canplaythrough", onCanPlay);
+    audio.addEventListener("error", onError);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("play", onPlay);
+    audio.load();
 
     window.addEventListener("pointerdown", handleInteraction, { passive: true });
 
     return () => {
       cancelFade();
       window.removeEventListener("pointerdown", handleInteraction);
+      audio.removeEventListener("canplaythrough", onCanPlay);
+      audio.removeEventListener("error", onError);
       audio.removeEventListener("pause", onPause);
       audio.removeEventListener("play", onPlay);
       audio.pause();
@@ -201,11 +225,21 @@ export function AudioProvider({ children }: AudioProviderProps) {
       isPlaying,
       hasStarted,
       toggleMute,
+      startAmbient,
     }),
-    [isMuted, isPlaying, hasStarted, toggleMute],
+    [isMuted, isPlaying, hasStarted, toggleMute, startAmbient],
   );
 
   return (
-    <AudioContext.Provider value={value}>{children}</AudioContext.Provider>
+    <AudioContext.Provider value={value}>
+      <audio
+        src={AUDIO_CONFIG.src}
+        preload="auto"
+        loop
+        className="hidden"
+        aria-hidden="true"
+      />
+      {children}
+    </AudioContext.Provider>
   );
 }
